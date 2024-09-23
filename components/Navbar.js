@@ -1,12 +1,13 @@
 // components/Navbar.js
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import LenguageSwitcher from './LenguageSwitcher'; // Asegúrate de importar correctamente
 import styles from '../styles/Navbar.module.css';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,10 +37,6 @@ export default function Navbar() {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const toggleLanguage = () => {
-    i18n.changeLanguage(i18n.language === 'en' ? 'es' : 'en');
-  };
-
   return (
     <nav className={`${styles.navbar} ${isScrolled ? styles.scrolled : ''}`}>
       <span className={styles.brandName} onClick={() => scrollToSection('home')}>Paolo Grosso</span>
@@ -47,17 +44,14 @@ export default function Navbar() {
         ☰
       </button>
       <ul className={`${styles.ul} ${isMenuOpen ? styles.show : ''}`}>
-       
         <li className={styles.li} onClick={() => scrollToSection('demos')}>{t('demos')}</li>
         <li className={styles.li} onClick={() => scrollToSection('listen')}>{t('listen')}</li>
         <li className={styles.li} onClick={() => scrollToSection('projects')}>{t('projects')}</li>
         <li className={styles.li} onClick={() => scrollToSection('news')}>{t('news')}</li>
         <li className={styles.li} onClick={() => scrollToSection('bio')}>{t('bio')}</li>
         <li className={styles.li} onClick={() => scrollToSection('contact')}>{t('contact')}</li>
-        <li className={`${styles.li} ${styles.languageSwitch}`} onClick={toggleLanguage}>
-          {i18n.language === 'en' ? 'ES' : 'EN'}
-        </li>
       </ul>
+      <LenguageSwitcher /> 
     </nav>
   );
 }

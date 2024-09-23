@@ -18,87 +18,102 @@
 }
 
 #home {
-  margin-top: -80px; /* Evita que el contenido se superponga al navbar */
-  padding-top: 80px; /* Espacio para evitar superposición */
+  margin-top: -80px;
+  padding-top: 80px;
 }
 
 .brandName {
   font-size: 24px;
-  font-weight: bold; /* Cambiado a bold para mayor claridad */
+  font-weight: bold;
   background: linear-gradient(to right, #a0e6ff, #d4b8ff);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   cursor: pointer;
+  transition: transform 0.3s ease, font-size 0.3s ease;
+  display: inline-block; /* Asegura que la transformación funcione correctamente */
+}
+
+.brandName:hover {
+  transform: scale(1.05);
+  font-size: 25.2px; /* 5% más grande que el tamaño original */
 }
 
 .ul {
   display: flex;
-  list-style-type: none; /* Asegúrate de que no haya puntos de lista */
+  list-style-type: none;
 }
 
 .li {
   margin: 0 15px;
   cursor: pointer;
-  color: var(--foreground); /* Asegúrate de definir esta variable en tu CSS global */
+  color: var(--foreground);
   font-size: 16px;
+  transition: color 0.3s ease, transform 0.3s ease, font-size 0.3s ease;
+  display: inline-block; /* Asegura que la transformación funcione correctamente */
 }
 
 .li:hover {
-  color: #a0e6ff; /* Color al pasar el mouse */
+  color: #a0e6ff;
+  transform: scale(1.2);
+  font-size: 16px; /* 5% más grande que el tamaño original */
 }
 
 .languageSwitch {
-  background-color: #a0e6ff; /* Color de fondo para el botón de idioma */
-  color: black; /* Color del texto */
-  padding: 5px 10px; /* Espaciado interno */
-  border-radius: 5px; /* Bordes redondeados */
+  background-color: #a0e6ff;
+  color: black;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease, font-size 0.3s ease;
+  display: inline-block; /* Asegura que la transformación funcione correctamente */
 }
 
 .languageSwitch:hover {
-  background-color: #d4b8ff; /* Color al pasar el mouse */
+  background-color: #d4b8ff;
+  transform: scale(1.05);
+  font-size: 16.8px; /* 5% más grande que el tamaño original */
 }
 
 .menuButton {
-   display: none; /* Oculto por defecto en pantallas grandes */
-   background: none; 
-   border: none; 
-   color: var(--foreground); 
-   font-size:24px; 
-   cursor:pointer; 
+   display: none;
+   background: none;
+   border: none;
+   color: var(--foreground);
+   font-size: 24px;
+   cursor: pointer;
 }
 
 /* Estilos responsivos */
-@media (max-width:768px) {
+@media (max-width: 768px) {
    .navbar {
-     flex-direction: column; 
-     align-items:flex-start; 
+     flex-direction: column;
+     align-items: flex-start;
    }
    
    .menuButton {
-     display:block; /* Mostrar botón en pantallas pequeñas */
-     position:absolute; 
-     right:20px; 
-     top:20px; 
+     display: block;
+     position: absolute;
+     right: 20px;
+     top: 20px;
    }
    
    .ul {
-     display:none; 
-     flex-direction:column; 
-     width:100%; 
-     margin-top:20px; 
+     display: none;
+     flex-direction: column;
+     width: 100%;
+     margin-top: 20px;
    }
    
-   .ul.show { 
-     display:flex; /* Mostrar menú cuando está abierto */ 
+   .ul.show {
+     display: flex;
    }
    
-   .li { 
-     margin:10px0; 
-     text-align:center; 
+   .li {
+     margin: 10px 0;
+     text-align: center;
    }
 
-   .languageSwitch { 
-     margin-top:10px; 
+   .languageSwitch {
+     margin-top: 10px;
    }
 }

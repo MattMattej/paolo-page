@@ -2,15 +2,28 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background-color: var(--background);
+  background-color: #fafafa !important;
   padding: 2rem 0;
+  color: #333;
+  margin-top: 80px;
 }
 
 .container {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 2rem 1rem;
+}
+
+.gradientTitle {
+  font-size: 3.5rem; /* Tamaño más grande */
+  margin-bottom: 1.5rem;
+  background: linear-gradient(to right, #a0e6ff, #d4b8ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Sombra para resaltar el texto */
 }
 
 .content {
@@ -29,24 +42,17 @@
   flex: 1;
 }
 
-.title {
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
-  color: var(--primary);
-}
-
-.subtitle {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  color: var(--secondary);
+.roundedImage {
+  border-radius: 70px !important; /* Bordes redondeados */
 }
 
 .description {
-  font-size: 1.1rem;
-  line-height: 1.6;
+  font-size: 1.5rem; /* Texto más grande */
+  line-height: 1.8;
   margin-bottom: 1.5rem;
+  color: #333;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Sombra suave para resaltar */
 }
-
 
 .expandableSections {
   margin-top: 2rem;
@@ -55,40 +61,19 @@
   gap: 20px;
 }
 
-.expandableSections > div {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.expandableSections button {
-  flex-grow: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 1rem;
-  background-color: var(--primary);
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.expandableSections button:hover {
-  background-color: var(--primary-dark);
-}
-
 @media (max-width: 768px) {
+  .homeSection {
+    margin-top: 60px;
+  }
+
   .content {
     flex-direction: column;
   }
 
-  .textContent, .imageContent {
+  .textContent,
+  .imageContent {
     width: 100%;
     padding-right: 0;
-  
     margin-bottom: 1rem;
   }
 

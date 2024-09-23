@@ -6,7 +6,7 @@ const ListenSection = () => {
   const { t } = useTranslation();
 
   const tracks = [
-    { id: 1, title: t('track1Title'), album: t('track1Album'), src: '/track1.mp3' },
+    { id: 1, title: t('Tema1'), album: t('Castillos'), src: '/track1.mp3' },
     { id: 2, title: t('track2Title'), album: t('track2Album'), src: '/track2.mp3' },
     { id: 3, title: t('track3Title'), album: t('track3Album'), src: '/track3.mp3' },
     { id: 4, title: t('track4Title'), album: t('track4Album'), src: '/track4.mp3' },

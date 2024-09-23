@@ -5,29 +5,36 @@ import styles from '../styles/HomeSection.module.css';
 import ExpandableSection from './ExpandableSection';
 
 const HomeSection = () => {
-  const { t } = useTranslation(); // Importamos i18n hook
-  const [isExpanded, setIsExpanded] = useState(false);
+  const { t } = useTranslation();
+  const [expandedSections, setExpandedSections] = useState({
+    section1: false,
+    section2: false,
+    section3: false,
+  });
 
-  const toggleExpand = () => {
-    setIsExpanded(!isExpanded);
+  const toggleExpand = (sectionKey) => {
+    setExpandedSections((prevState) => ({
+      ...prevState,
+      [sectionKey]: !prevState[sectionKey],
+    }));
   };
 
   return (
-    <section id='home' className={`${styles.homeSection} section`}>
+    <section id="home" className={`${styles.homeSection} section`}>
       <div className={styles.container}>
+
         <div className={styles.content}>
           <div className={styles.textContent}>
-            <p className={styles.description}>
-              {t('home_description')}
-            </p>
+            <p className={styles.description}>{t('home_description')}</p>
           </div>
           <div className={styles.imageContent}>
             <Image
-              src='/paolo2.png'
-              alt='Paolo Grosso'
+              src="/paolo2.png"
+              alt="Paolo Grosso"
               width={200}
               height={200}
-              layout='responsive'
+              layout="responsive"
+              className={styles.roundedImage} // Añadido estilo para bordes redondeados
             />
           </div>
         </div>
@@ -35,20 +42,20 @@ const HomeSection = () => {
           <ExpandableSection
             title={t('expandable_title_1')}
             content={t('expandable_content_1')}
-            isExpanded={isExpanded}
-            onToggle={toggleExpand}
+            isExpanded={expandedSections.section1}
+            onToggle={() => toggleExpand('section1')}
           />
           <ExpandableSection
             title={t('expandable_title_2')}
             content={t('expandable_content_2')}
-            isExpanded={isExpanded}
-            onToggle={toggleExpand}
+            isExpanded={expandedSections.section2}
+            onToggle={() => toggleExpand('section2')}
           />
           <ExpandableSection
             title={t('expandable_title_3')}
             content={t('expandable_content_3')}
-            isExpanded={isExpanded}
-            onToggle={toggleExpand}
+            isExpanded={expandedSections.section3}
+            onToggle={() => toggleExpand('section3')}
           />
         </div>
       </div>

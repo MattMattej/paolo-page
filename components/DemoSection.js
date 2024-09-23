@@ -8,10 +8,35 @@ import styles from '../styles/DemoSection.module.css';
 const DemosSection = () => {
   const { t } = useTranslation();
 
+  // Definición de los items del carrusel
   const demos = [
-    { id: 1, image: '/paolo2.png', title: t('Demo Teatro') },
-    { id: 2, image: '/paolo3.png', title: t('Demo Audiovisual') },
-    { id: 3, image: '/paolo4.png', title: t('Demo Otro') },
+    {
+      id: 1,
+      type: 'video',
+      src: 'https://youtu.be/2yBu8unNlek?si=aujWKgyQXYF6TRaP', // Reemplaza 'tu-video-id' con el ID del video de YouTube
+      title: t('Film Scoring'),
+    },
+    {
+      id: 2,
+      type: 'audio',
+      image: '/fondo1.webp',
+      src: '/track1.mp3',
+      title: t('Estilos varios B'),
+    },
+    {
+      id: 3,
+      type: 'audio',
+      image: '/fondo1.webp',
+      src: '/track2.mp3',
+      title: t('Estilos varios B'),
+    },
+    {
+      id: 4,
+      type: 'audio',
+      image: '/fondo1.webp',
+      src: '/track3.mp3',
+      title: t('Estilos varios C'),
+    },
   ];
 
   return (
@@ -21,13 +46,32 @@ const DemosSection = () => {
         <Carousel showThumbs={false} showStatus={false} infiniteLoop={true} className={styles.carousel}>
           {demos.map((demo) => (
             <div key={demo.id} className={styles.demoSlide}>
-              <Image 
-                src={demo.image} 
-                alt={demo.title} 
-                width={300} 
-                height={300} 
-                objectFit='cover'
-              />
+              {demo.type === 'video' ? (
+                <iframe
+                  width='100%'
+                  height='400'
+                  src={demo.src}
+                  title={demo.title}
+                  frameBorder='0'
+                  allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+                  allowFullScreen
+                ></iframe>
+              ) : (
+                <div className={styles.audioContainer}>
+                  <Image
+                    src={demo.image}
+                    alt={demo.title}
+                    width={800}
+                    height={400}
+                    objectFit='cover'
+                    className={styles.fixedImage}
+                  />
+                  <audio controls className={styles.audioPlayer}>
+                    <source src={demo.src} type='audio/mpeg' />
+                    Your browser does not support the audio element.
+                  </audio>
+                </div>
+              )}
               <p className={styles.legend}>{demo.title}</p>
             </div>
           ))}

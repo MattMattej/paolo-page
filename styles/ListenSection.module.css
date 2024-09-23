@@ -1,13 +1,13 @@
 .listenSection {
     padding: 80px 0;
-    background-color: var(--section-bg-1);
+    background-color: #fafafa;
   }
   
   .title {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 40px;
-    color: var(--primary);
+    color: black;
   }
   
   .trackList {
@@ -33,13 +33,13 @@
   .trackInfo h3 {
     margin: 0;
     font-size: 1.2rem;
-    color: var(--primary);
+    color: white;
   }
   
   .trackInfo p {
     margin: 5px 0 0;
     font-size: 0.9rem;
-    color: var(--secondary);
+    color: rgb(138, 212, 241);
   }
   
   .audioPlayer {

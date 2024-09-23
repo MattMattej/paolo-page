@@ -1,5 +1,5 @@
 .bioSection {
-  background-color: var(--section-bg-1);
+  background-color:  #000000 !important;
   padding: 40px 0;
 }
 
@@ -7,7 +7,7 @@
   text-align: center; /* Alineación centrada */
   font-size: 2.5rem; /* Ajuste al mismo tamaño que DemoSection */
   margin-bottom: 40px; /* Mismo margen que DemoSection */
-  color: var(--primary)!important; /* Color consistente */ 
+  color: #fafafa!important; /* Color consistente */ 
 }
 
 .bioContent {
@@ -24,7 +24,7 @@
 }
 
 .bioBlock {
-  background: rgba(255, 255, 255, 0.1);
+  background: black(255, 255, 255, 0.1);
   padding: 15px;
   border-radius: 8px;
 }

@@ -1,52 +1,57 @@
 .expandableSection {
-  border-bottom: 1px solid var(--secondary);
-  overflow: hidden;
-  transition: max-height 0.3s ease-in-out;
-  cursor: pointer;
+  border: 1px solid #e0e0e0 !important;
+  border-radius: 5px !important;
+  overflow: hidden !important;
+  margin: 0 !important; /* Elimina cualquier margen adicional */
+  padding: 0 !important; /* Asegura que no haya padding en el contenedor principal */
+  transition: all 0.3s ease !important; /* Transición suave para cualquier cambio */
 }
 
 .title {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-  background-color: var(--background);
-  color: var(--primary);
-  font-size: 1.2rem;
-  transition: background-color 0.3s ease;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 1rem !important;
+  background-color: #f0f0f0 !important;
+  color: #333 !important;
+  font-size: 1.2rem !important;
+  cursor: pointer !important;
+  transition: background-color 0.3s ease !important;
 }
 
 .title:hover {
-  background-color: var(--primary);
-  color: var(--background);
+  background-color: var(--background) !important;
+  color: #fff !important;
 }
 
 .arrow {
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease !important;
 }
 
 .expandedArrow {
-  transform: rotate(180deg);
+  transform: rotate(180deg) !important;
 }
 
 .content {
-  padding: 1rem;
-  background-color: var(--secondary);
-  color: var(--foreground);
-  transition: opacity 0.3s ease;
-  opacity: 1;
+  max-height: 0 !important;
+  overflow: hidden !important;
+  transition: max-height 0.3s ease-out !important;
+  padding: 0 !important; /* Evita padding indeseado cuando está colapsado */
+  margin: 0 !important; /* Remueve el margen que genera el espacio gris */
+  border-top: none !important; /* Asegura que no haya borde al colapsar */
 }
 
-.expandableSection.expanded .content {
-  max-height: 300px; /* Ajusta según el contenido */
-  opacity: 1;
+.content.expanded {
+  max-height: 500px !important; /* Ajusta según el contenido máximo esperado */
+  padding: 1rem !important; /* Añade padding solo cuando está expandido */
+}
+
+.content p {
+  margin: 0 !important;
 }
 
 @media (max-width: 768px) {
   .title {
-    font-size: 1.2rem;
-  }
-  .content {
-    font-size: 1rem;
+    font-size: 1.1rem !important;
   }
 }
