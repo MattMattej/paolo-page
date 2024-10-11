@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import Image from 'next/image';
 import styles from '../styles/HomeSection.module.css';
 import ExpandableSection from './ExpandableSection';
 
@@ -11,34 +10,29 @@ const HomeSection = () => {
     section2: false,
     section3: false,
   });
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
 
   const toggleExpand = (sectionKey) => {
-    setExpandedSections((prevState) => ({
+    setExpandedSections(prevState => ({
       ...prevState,
-      [sectionKey]: !prevState[sectionKey],
+      [sectionKey]: !prevState[sectionKey]
     }));
   };
 
   return (
-    <section id="home" className={`${styles.homeSection} section`}>
+    <section id="home" className={`${styles.homeSection} ${isVisible ? styles.visible : ''}`}>
+      <div className={styles.overlay}></div>
       <div className={styles.container}>
-
-        <div className={styles.content}>
+        <div className={`${styles.content} ${isVisible ? styles.fadeIn : ''}`}>
           <div className={styles.textContent}>
             <p className={styles.description}>{t('home_description')}</p>
           </div>
-          <div className={styles.imageContent}>
-            <Image
-              src="/paolo2.png"
-              alt="Paolo Grosso"
-              width={200}
-              height={200}
-              layout="responsive"
-              className={styles.roundedImage} // Añadido estilo para bordes redondeados
-            />
-          </div>
         </div>
-        <div className={styles.expandableSections}>
+        <div className={`${styles.expandableSections} ${isVisible ? styles.fadeInUp : ''}`}>
           <ExpandableSection
             title={t('expandable_title_1')}
             content={t('expandable_content_1')}

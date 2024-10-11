@@ -1,7 +1,6 @@
-// components/Navbar.js
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import LenguageSwitcher from './LenguageSwitcher'; // Asegúrate de importar correctamente
+import LenguageSwitcher from './LenguageSwitcher';
 import styles from '../styles/Navbar.module.css';
 
 export default function Navbar() {
@@ -30,7 +29,7 @@ export default function Navbar() {
         behavior: 'smooth'
       });
     }
-    setIsMenuOpen(false); // Cierra el menú después de hacer clic en un enlace
+    setIsMenuOpen(false);
   };
 
   const toggleMenu = () => {
@@ -40,18 +39,19 @@ export default function Navbar() {
   return (
     <nav className={`${styles.navbar} ${isScrolled ? styles.scrolled : ''}`}>
       <span className={styles.brandName} onClick={() => scrollToSection('home')}>Paolo Grosso</span>
+      <div className={styles.navItems}>
+        <ul className={`${styles.ul} ${isMenuOpen ? styles.show : ''}`}>
+          <li className={styles.li} onClick={() => scrollToSection('demos')}>{t('demos')}</li>
+          <li className={styles.li} onClick={() => scrollToSection('listen')}>{t('listen')}</li>
+          <li className={styles.li} onClick={() => scrollToSection('projects')}>{t('projects')}</li>
+          <li className={styles.li} onClick={() => scrollToSection('bio')}>{t('bio')}</li>
+          <li className={styles.li} onClick={() => scrollToSection('contact')}>{t('contact')}</li>
+        </ul>
+        <LenguageSwitcher />
+      </div>
       <button className={styles.menuButton} onClick={toggleMenu}>
-        ☰
+        ☰ Menu
       </button>
-      <ul className={`${styles.ul} ${isMenuOpen ? styles.show : ''}`}>
-        <li className={styles.li} onClick={() => scrollToSection('demos')}>{t('demos')}</li>
-        <li className={styles.li} onClick={() => scrollToSection('listen')}>{t('listen')}</li>
-        <li className={styles.li} onClick={() => scrollToSection('projects')}>{t('projects')}</li>
-        <li className={styles.li} onClick={() => scrollToSection('news')}>{t('news')}</li>
-        <li className={styles.li} onClick={() => scrollToSection('bio')}>{t('bio')}</li>
-        <li className={styles.li} onClick={() => scrollToSection('contact')}>{t('contact')}</li>
-      </ul>
-      <LenguageSwitcher /> 
     </nav>
   );
 }

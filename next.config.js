@@ -7,7 +7,15 @@ const nextConfig = {
   },
   reactStrictMode: true,
   eslint: {
-    ignoreDuringBuilds: true, // Ignora los errores de ESLint durante el build
+    ignoreDuringBuilds: true,
+  },
+  webpack: (config, { isServer }) => {
+    config.module.rules.push({
+      test: /\.json$/,
+      type: 'javascript/auto',
+      use: ['json-loader'],
+    });
+    return config;
   },
 };
 
