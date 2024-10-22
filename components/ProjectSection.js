@@ -1,10 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import Image from 'next/image';
 import styles from '../styles/ProjectSection.module.css';
+import { 
+  Youtube, 
+  Music, 
+  Play, 
+  Link as LinkIcon, 
+  FileText, 
+  Video,
+  Info,
+  ExternalLink,
+  Spotify,
+  Apple
+} from 'lucide-react';
 
 const ProjectsSection = () => {
   const { t } = useTranslation();
+  const selectedProjectRef = useRef(null);
   const [activeFilters, setActiveFilters] = useState(['ALL']);
   const [visibleProjects, setVisibleProjects] = useState(10);
   const [selectedProject, setSelectedProject] = useState(null);
@@ -41,17 +54,32 @@ const ProjectsSection = () => {
       ]
     },
     {
-      "id": 4,
-      "title": "UNA LUZ AFUERA (PELÍCULA)",
-      "description": "Composición, interpretación, grabación y mezcla de música original. Diseñador sonoro. Ganadora del fondo 'Montevideo Audiovisual' 2022. Estreno en cines septiembre 2024. Dirección: José Elizalde. Producción: Gardeliam. 2021 - 2022",
-      "image": "/projects/una_luz.jpeg",
-      "categories": ["CINE", "ALBUM", "AUDIO"],
-      "links": [
-        { "url": "https://www.youtube.com/watch?v=M_3NH3EIpvk&t=14s", "text": "Ver trailer" },
-        { "url": "https://open.spotify.com/intl-es/album/666uXCB1uLPb7sdZ3fnEaJ?si=ww2D4GtVSQqkH_YLb8WWEw", "text": "Escuchar en Spotify" },
-        { "url": "https://www.youtube.com/watch?v=hJX4b-51nWA&list=PLf9WXCV40h_Xm4Zs2KyKtajY4RuKXOBoP", "text": "Escuchar en YouTube" },
-        { "url": "https://music.apple.com/hn/album/una-luz-afuera-original-motion-picture-soundtrack/1769240618", "text": "Escuchar en Apple Music" },
-        { "url": "https://www.imdb.com/title/tt27212583/", "text": "Ver en IMDb" }
+      id: 4,
+      title: "UNA LUZ AFUERA (PELÍCULA)",
+      description: "Composición, interpretación, grabación y mezcla de música original. Diseñador sonoro. Ganadora del fondo Montevideo Audiovisual 2022. Estreno en cines septiembre 2024. Dirección: José Elizalde. Producción: Gardeliam. 2021 - 2022",
+      image: "/projects/una_luz.jpeg",
+      categories: ["CINE", "ALBUM", "AUDIO"],
+      links: [
+        { 
+          url: "https://www.youtube.com/watch?v=M_3NH3EIpvk",
+          text: "Ver trailer"
+        },
+        { 
+          url: "https://open.spotify.com/album/666uXCB1uLPb7sdZ3fnEaJ",
+          text: "Escuchar en Spotify"
+        },
+        { 
+          url: "https://www.youtube.com/playlist?list=PLf9WXCV40h_Xm4Zs2KyKtajY4RuKXOBoP",
+          text: "Escuchar en YouTube"
+        },
+        { 
+          url: "https://music.apple.com/hn/album/una-luz-afuera-original-motion-picture-soundtrack/1769240618",
+          text: "Escuchar en Apple Music"
+        },
+        { 
+          url: "https://www.imdb.com/title/tt27212583/",
+          text: "Ver en IMDb"
+        }
       ]
     },
     {
@@ -139,7 +167,7 @@ const ProjectsSection = () => {
       "id": 13,
       "title": "PIELES Y RIELES (CORTOMETRAJE)",
       "description": "Editor de diálogos y SFX, diseñador sonoro, postproducción y mezcla de sonido. Realización y Dirección: Felipe Ipar. 2019 - 2018",
-      "image": "/projects/pieles.jpg",
+      "image": "/projects/pieles.png",
       "categories": ["AUDIO"]
     },
     {
@@ -205,7 +233,7 @@ const ProjectsSection = () => {
     {
       "id": 20,
       "title": "SCOTT WHISKERS: The Search for the Golden Cat (VIDEOJUEGO - Alemania)",
-      "description": "Composición, interpretación, grabación y mezcla de música original (20 tracks). Desarrollador: Alex Friedrich. Realización: Fancy Factory. 2024 (sale en 2025)",
+      "description": "Composición, interpretación, grabación y mezcla de música original (20 tracks). Desarrollador: Alex Friedrich. Realización: Fancy Factory. 2024",
       "image": "/projects/goldencat.jpg",
       "categories": ["VIDEOJUEGO"],
       "links": []
@@ -219,7 +247,7 @@ const ProjectsSection = () => {
       "links": [
         { "url": "https://www.imdb.com/title/tt29169862/", "text": "Ver en IMDb" },
         { "url": "https://www.youtube.com/watch?v=2Wr6SFsVxvY", "text": "Ver trailer" },
-        { "url": "https://store.steampowered.com/app/1545610/Scott_Whiskers_in_the_Search_for_Mr_Fumbleclaw/", "text": "Ver en Steam" }
+        { "url": "https://store.steampowered.com/app/1545610/Scott_Whiskers_in_the_Search_for_Mr_Fumbleclaw/", "text": "Steam" }
       ]
     },
     {
@@ -229,12 +257,12 @@ const ProjectsSection = () => {
       "image": "/projects/castillo_inflado.png",
       "categories": ["TEATRO", "ALBUM"],
       "links": [
-        { "url": "https://open.spotify.com/intl-es/album/0VsvWlxm33ynIJ1Zgl9dJP?si=94pHpdhzQQOE8I2fFMJCZw", "text": "Escuchar en Spotify" },
-        { "url": "https://www.youtube.com/playlist?list=OLAK5uy_nK0yWmLg-oFjRNkCHqbhWWEulglREf1lM", "text": "Escuchar en YouTube" },
-        { "url": "https://music.apple.com/hn/album/castillo-inflado-original-theatre-soundtrack/1613762272", "text": "Escuchar en Apple Music" },
+        { "url": "https://open.spotify.com/intl-es/album/0VsvWlxm33ynIJ1Zgl9dJP?si=94pHpdhzQQOE8I2fFMJCZw", "text": "Spotify" },
+        { "url": "https://www.youtube.com/playlist?list=OLAK5uy_nK0yWmLg-oFjRNkCHqbhWWEulglREf1lM", "text": "YouTube" },
+        { "url": "https://music.apple.com/hn/album/castillo-inflado-original-theatre-soundtrack/1613762272", "text": "Apple Music" },
         { "url": "https://sodre.gub.uy/espectaculos/castillo-inflable/", "text": "Información del espectáculo" },
-        { "url": "https://www.youtube.com/watch?v=cP4VSo174x4", "text": "Entrevista al director 1" },
-        { "url": "https://www.youtube.com/watch?v=Qhhs8IIQ5F4", "text": "Entrevista al director 2" }
+        { "url": "https://www.youtube.com/watch?v=cP4VSo174x4", "text": "Entrevista" },
+        { "url": "https://www.youtube.com/watch?v=Qhhs8IIQ5F4", "text": "Entrevista" }
       ]
     },
     {
@@ -462,6 +490,17 @@ const ProjectsSection = () => {
     }
   ];
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (selectedProjectRef.current && !selectedProjectRef.current.contains(event.target)) {
+        setSelectedProject(null);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
   const filters = [
     { id: 'ALL', label: t('All') },
     { id: 'CINE', label: t('Film') },
@@ -473,18 +512,53 @@ const ProjectsSection = () => {
     { id: 'AUDIO', label: t('Audio') },
   ];
 
+  // Función para formatear la descripción
+  const formatDescription = (description) => {
+    // Divide el texto en oraciones y las formatea
+    const sentences = description.split(/(?<=\.)(?:\s+)/);
+    return sentences.map((sentence, index) => (
+      <React.Fragment key={index}>
+        {sentence.trim()}
+        {index < sentences.length - 1 && <br />}<br />
+      </React.Fragment>
+    ));
+  };
+
+  // Función para determinar el ícono del enlace
+  const getLinkIcon = (url, text) => {
+    const lowercaseUrl = url.toLowerCase();
+    const lowercaseText = text.toLowerCase();
+
+    if (lowercaseUrl.includes('spotify')) {
+      return <Spotify className={styles.linkIcon} />;
+    }
+    if (lowercaseUrl.includes('youtube')) {
+      return <Youtube className={styles.linkIcon} />;
+    }
+    if (lowercaseUrl.includes('apple.com/music')) {
+      return <Apple className={styles.linkIcon} />;
+    }
+    if (lowercaseUrl.includes('imdb')) {
+      return <Video className={styles.linkIcon} />;
+    }
+    if (lowercaseText.includes('trailer')) {
+      return <Play className={styles.linkIcon} />;
+    }
+    if (lowercaseText.includes('info') || lowercaseText.includes('más')) {
+      return <Info className={styles.linkIcon} />;
+    }
+    if (lowercaseText.includes('ficha')) {
+      return <FileText className={styles.linkIcon} />;
+    }
+    return <ExternalLink className={styles.linkIcon} />;
+  };
+
   const toggleFilter = (filterId) => {
-    setActiveFilters(prev => {
-      if (filterId === 'ALL') {
-        return ['ALL'];
-      } else {
-        const newFilters = prev.filter(f => f !== 'ALL' && f !== filterId);
-        if (!prev.includes(filterId)) {
-          newFilters.push(filterId);
-        }
-        return newFilters.length ? newFilters : ['ALL'];
-      }
-    });
+    if (activeFilters[0] === filterId) {
+      setActiveFilters(['ALL']); // Vuelve a 'ALL' si se hace clic en el filtro activo
+    } else {
+      setActiveFilters([filterId]); // Establece el nuevo filtro como único activo
+    }
   };
 
   const filteredProjects = projects.filter(project => 
@@ -515,21 +589,31 @@ const ProjectsSection = () => {
           ))}
         </div>
         {selectedProject && (
-          <div className={styles.selectedProject}>
+          <div className={styles.selectedProject} ref={selectedProjectRef}>
             <div className={styles.selectedProjectImage}>
               <Image
                 src={selectedProject.image}
                 alt={selectedProject.title}
                 layout="fill"
                 objectFit="contain"
+                className={styles.projectImage}
               />
             </div>
-            <h3>{selectedProject.title}</h3>
-            <p>{selectedProject.description}</p>
+            <h3 className={styles.selectedProjectTitle}>{selectedProject.title}</h3>
+            <div className={styles.selectedProjectDescription}>
+              {formatDescription(selectedProject.description)}
+            </div>
             <div className={styles.projectLinks}>
-              {selectedProject.links.map((link, index) => (
-                <a key={index} href={link.url} target="_blank" rel="noopener noreferrer">
-                  {link.text}
+              {selectedProject.links?.map((link, index) => (
+                <a 
+                  key={index} 
+                  href={link.url} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className={styles.projectLink}
+                >
+                  {getLinkIcon(link.url, link.text)}
+                  <span>{link.text}</span>
                 </a>
               ))}
             </div>
@@ -548,6 +632,7 @@ const ProjectsSection = () => {
                   alt={project.title}
                   layout="fill"
                   objectFit="cover"
+                  priority
                 />
               </div>
               <h3>{project.title}</h3>
