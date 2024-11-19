@@ -7,13 +7,12 @@ const ListenSection = () => {
   const [albums, setAlbums] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const clientId = '805950e62e3a4bfcb7d700faf861c5ad';  // Tu Client ID
-  const clientSecret = 'd4a5a5e8633c4dffb5c97225afff5e24';  // Tu Client Secret
+  const clientId = '805950e62e3a4bfcb7d700faf861c5ad';  
+  const clientSecret = 'd4a5a5e8633c4dffb5c97225afff5e24';  
 
   useEffect(() => {
-    // Función para obtener el token de acceso
     const getAccessToken = async () => {
-      const credentials = btoa(`${clientId}:${clientSecret}`); // Codificar en Base64
+      const credentials = btoa(`${clientId}:${clientSecret}`);
       const res = await fetch('https://accounts.spotify.com/api/token', {
         method: 'POST',
         headers: {
@@ -28,9 +27,8 @@ const ListenSection = () => {
       return data.access_token;
     };
 
-    // Función para obtener los álbumes
     const fetchAlbums = async () => {
-      const accessToken = await getAccessToken();  // Obtener el token
+      const accessToken = await getAccessToken();
       const res = await fetch('https://api.spotify.com/v1/artists/71emEmZqNA92fpj1aBzsVF/albums', {
         method: 'GET',
         headers: {
@@ -38,12 +36,25 @@ const ListenSection = () => {
         },
       });
       const data = await res.json();
-      setAlbums(data.items);  // Guardar los álbumes en el estado
-      setLoading(false);  // Dejar de cargar
+      setAlbums(data.items);
+      setLoading(false);
     };
 
-    fetchAlbums(); // Llamada inicial para obtener los álbumes
+    fetchAlbums();
   }, []);
+
+  const renderAlbumName = (name) => {
+    if (name.includes('(')) {
+      const [mainName, parenthetical] = name.split('(');
+      return (
+        <>
+          <h3>{mainName.trim()}</h3>
+          <p>({parenthetical.trim()}</p>
+        </>
+      );
+    }
+    return <h3>{name}</h3>;
+  };
 
   return (
     <section id="Albums" className={styles.listenSection}>
@@ -59,7 +70,7 @@ const ListenSection = () => {
                 href={album.external_urls.spotify}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={styles.albumLink}  // Estilo para el enlace
+                className={styles.albumLink}
               >
                 <div className={styles.albumCard}>
                   <img
@@ -68,7 +79,7 @@ const ListenSection = () => {
                     className={styles.albumImage}
                   />
                   <div className={styles.albumInfo}>
-                    <h3>{album.name}</h3>
+                    {renderAlbumName(album.name)}
                     <p>{album.release_date.split('-')[0]}</p>
                   </div>
                 </div>

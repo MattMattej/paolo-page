@@ -3,15 +3,17 @@
   display: flex;
   flex-direction: column; /* Alineación en columna */
   position: relative;
-  background-image: url('/A-3.jpg'); /* Imagen de fondo */
-  background-size: cover;
+  background-color: black;
+  background-image: url('/A-10.jpg'); /* Imagen de fondo */
+  background-size:contain;
   background-position: center;
-  background-attachment: fixed;
+  background-attachment:fixed;
   color: white;
   opacity: 0;
   transition: opacity 1s ease-in-out;
   padding-top: 80px; /* Espacio para el navbar */
   z-index: 0;
+
 }
 
 .homeSection.visible {

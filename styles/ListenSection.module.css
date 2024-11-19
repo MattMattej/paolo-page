@@ -1,34 +1,25 @@
 .listenSection {
   padding: 80px 0;
-  background-color: black; /* Ruta a la imagen de fondo */
-  background-size: 100% 100%; /* Asegura que la imagen ocupe el 100% del contenedor */
-  background-position: center center; /* Centra la imagen de fondo */
-  background-repeat: no-repeat; /* Evita la repetición de la imagen */
+  background-color: black;
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
   position: relative;
-  background-attachment: fixed; /* Hace que la imagen de fondo no se desplace */
 }
 
 .listenSection::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.3); /* Fondo con opacidad para darle el efecto de translúcido */
-  z-index: 1; /* Asegura que el fondo esté debajo del contenido */
+  display: none; /* Eliminar completamente el pseudo-elemento */
 }
 
 .container {
-  position: relative; /* Asegura que el contenido esté sobre el fondo */
-  z-index: 2;
+  position: relative;
 }
 
 .title {
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 40px;
-  color: white; /* Texto blanco para el título */
+  color: white;
 }
 
 .albumGrid {
@@ -39,12 +30,11 @@
 }
 
 .albumCard {
-  background-color: transparent; /* Fondo completamente transparente */
+  background-color: transparent;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  backdrop-filter: blur(10px); /* Efecto de desenfoque */
 }
 
 .albumCard:hover {
@@ -61,19 +51,20 @@
 .albumInfo {
   padding: 15px;
   text-align: center;
-  color: white; /* Texto blanco en el contenido */
+  color: white;
 }
 
 .albumInfo h3 {
-  margin: 10px 0;
+  margin: 10px 0 5px 0;
   font-size: 1.4rem;
-  color: white; /* Título de los álbumes en blanco */
+  color: white;
 }
 
 .albumInfo p {
   margin: 0;
-  font-size: 1rem;
-  color: white; /* Fecha en blanco */
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  padding-top: 3px;
 }
 
 @media (max-width: 768px) {
