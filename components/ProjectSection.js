@@ -25,7 +25,7 @@ const ProjectsSection = () => {
   const projects = [
     {
       "id": 1,
-      "title": "FUSE (CORTOMETRAJE - United Kingdom)",
+      "title": "FUSE (United Kingdom)",
       "description": "Diseño de sonido y mezcla. Ganador del festival 'The Vancouver Horror Show 2023 (Canada)' en 'Best Twist' y nominado en 'Best Sound', 'Best Short' y 'Best Lead Performance'. Nominado a 'Best Horror Short' en 'Performance Short Film Competition 2023'. Selección oficial en Festivales 'Sunday Shorts', 'Dead Northern', 'Frightfest', 'Lift-off Global Network Showcase 2023' Dirección: Will Dennies. 2023",
       "image": "/projects/fuse.png",
       "categories": ["AUDIO"],
@@ -35,7 +35,7 @@ const ProjectsSection = () => {
     },
     {
       "id": 2,
-      "title": "MIGRAR (CORTOMETRAJE)",
+      "title": "MIGRAR",
       "description": "Composición, interpretación y grabación de música original. Diseño sonoro, postproducción y mezcla de sonido. Festivales: Detour 2024, Festival de Huelva 2024. Dirección: Lucía Haro y Maria del Mar Boix. Astuta Films. 2023",
       "image": "/projects/migrar.jpg",
       "categories": ["CINE", "AUDIO"],
@@ -45,7 +45,7 @@ const ProjectsSection = () => {
     },
     {
       "id": 3,
-      "title": "OTRAS PERSONAS (PELÍCULA)",
+      "title": "OTRAS PERSONAS",
       "description": "Edición de diálogos, diseño sonoro, postproducción y mezcla de sonido. Estreno en Centro Cultural San Martín (Argentina) en la 4a edición del Festival 'Semana de Cine Latinoamericano'. Dirección: Augusto Chiminelli. 2022 - 2023",
       "image": "/projects/otras_personas.png",
       "categories": ["AUDIO"],
@@ -55,7 +55,7 @@ const ProjectsSection = () => {
     },
     {
       id: 4,
-      title: "UNA LUZ AFUERA (PELÍCULA)",
+      title: "UNA LUZ AFUERA",
       description: "Composición, interpretación, grabación y mezcla de música original. Diseñador sonoro. Ganadora del fondo Montevideo Audiovisual 2022. Estreno en cines septiembre 2024. Dirección: José Elizalde. Producción: Gardeliam. 2021 - 2022",
       image: "/projects/una_luz.jpeg",
       categories: ["CINE", "ALBUM", "AUDIO"],
@@ -84,7 +84,7 @@ const ProjectsSection = () => {
     },
     {
       "id": 5,
-      "title": "MIMESIS (CORTOMETRAJE)",
+      "title": "MIMESIS",
       "description": "Edición de diálogos, postproducción y mezcla de sonido. Estreno en Festival 'Detour' y 'Cortos en cartelera'. Dirección: Facundo Sosa. 2021",
       "image": "/projects/mimesis.png",
       "categories": ["AUDIO"],
@@ -104,7 +104,7 @@ const ProjectsSection = () => {
     },
     {
       "id": 7,
-      "title": "'CICLO TEMÁTICO: ALIMENTOS Y SOSTENIBILIDAD', Instituto SARAS (COMERCIAL)",
+      "title": "'CICLO TEMÁTICO: ALIMENTOS Y SOSTENIBILIDAD', Instituto SARAS",
       "description": "Composición, interpretación, grabación y mezcla de música original. Sonido directo, editor de diálogos, editor de SFX y postproducción de sonido. Realización y dirección: Guillermo Amato. 2020",
       "image": "/projects/ciclo.png",
       "categories": ["VARIOS", "AUDIO"],
@@ -114,7 +114,7 @@ const ProjectsSection = () => {
     },
     {
       "id": 8,
-      "title": "UNO DE NOSOTROS (CORTOMETRAJE)",
+      "title": "UNO DE NOSOTROS",
       "description": "Composición, grabación y mezcla de música original. Sonido directo y edición de diálogos. Ganador del People's Choice Award en Filminute Festival. Dirección: Facundo Sosa. Realización: Reject Films. 2019",
       "image": "/projects/uno_denos.png",
       "categories": ["CINE", "AUDIO"],
@@ -124,7 +124,7 @@ const ProjectsSection = () => {
     },
     {
       "id": 9,
-      "title": "CÓMO DEJÉ DE PREOCUPARME POR QUIEN ME MIRA AL ESPEJO (CORTOMETRAJE)",
+      "title": "CÓMO DEJÉ DE PREOCUPARME POR QUIEN ME MIRA AL ESPEJO ",
       "description": "Sonido directo y artista de Foley. Dirección: Facundo Sosa. Realización: Reject Films. 2019",
       "image": "/projects/como_deje.png",
       "categories": ["AUDIO"],
@@ -136,7 +136,7 @@ const ProjectsSection = () => {
     },
     {
       "id": 10,
-      "title": "'EL RITMO DE LA TRIBU' para CANDELA CROSSFIT (COMERCIAL)",
+      "title": "'EL RITMO DE LA TRIBU' para CANDELA CROSSFIT ",
       "description": "Composición, interpretación, grabación y mezcla de música original. Diseñador sonoro. Realización: Reject Films. Dirección: Facundo Sosa. 2019",
       "image": "/projects/candela.png",
       "categories": ["VARIOS", "AUDIO"],
@@ -146,7 +146,7 @@ const ProjectsSection = () => {
     },
     {
       "id": 11,
-      "title": "LUGAR EN NINGUNA PARTE (PELÍCULA DOCUMENTAL)",
+      "title": "LUGAR EN NINGUNA PARTE ",
       "description": "Diseño sonoro, edición de diálogos, postproducción y mezcla de sonido. Composición, interpretación y grabación parcial de música original. Realización y Dirección: Anthony Fletcher y Guillermo Amato. 2019 - 2018",
       "image": "/projects/lugar.png",
       "categories": ["CINE", "AUDIO"],
@@ -158,35 +158,35 @@ const ProjectsSection = () => {
     },
     {
       "id": 12,
-      "title": "EL PUENTE (PELÍCULA)",
+      "title": "EL PUENTE",
       "description": "Sonido directo (actualmente en etapa de postproducción). Realización: Reject Films. Dirección: Facundo Sosa. 2019 - 2018",
       "image": "/projects/el_puente.png",
       "categories": ["AUDIO"]
     },
     {
       "id": 13,
-      "title": "PIELES Y RIELES (CORTOMETRAJE)",
+      "title": "PIELES Y RIELES",
       "description": "Editor de diálogos y SFX, diseñador sonoro, postproducción y mezcla de sonido. Realización y Dirección: Felipe Ipar. 2019 - 2018",
       "image": "/projects/pieles.png",
       "categories": ["AUDIO"]
     },
     {
       "id": 14,
-      "title": "MAYRA (CORTOMETRAJE)",
+      "title": "MAYRA",
       "description": "Diseño sonoro, postproducción y mezcla de sonido. Realización y Dirección: Anthony Fletcher. 2018",
       "image": "/projects/mayra.png",
       "categories": ["AUDIO"]
     },
     {
       "id": 15,
-      "title": "MALPO Y PAULA (CORTOMETRAJE)",
+      "title": "MALPO Y PAULA",
       "description": "Composición, interpretación y grabación de música original. Diseñador sonoro, postproducción y mezcla de sonido. Realización y Dirección: Anthony Fletcher. 2018",
       "image": "/projects/malpo.png",
       "categories": ["CINE", "AUDIO"]
     },
     {
       "id": 16,
-      "title": "FE EN LA RESISTENCIA (PELÍCULA DOCUMENTAL)",
+      "title": "FE EN LA RESISTENCIA ",
       "description": "Composición, interpretación y grabación de música original. Postproducción y mezcla de sonido. Estreno en 'Sala Zitarrosa' y 'Sala B' del Sodre. Realización y Dirección: Nicolás Iglesias Schneider. 2018",
       "image": "/projects/fe.png",
       "categories": ["CINE", "AUDIO"],
@@ -198,7 +198,7 @@ const ProjectsSection = () => {
     },
     {
       "id": 17,
-      "title": "POR AMOR (CORTOMETRAJE ANIMADO)",
+      "title": "POR AMOR",
       "description": "Composición, interpretación y grabación de música original. Realización y Dirección: Macarena Campos y Camilo Fernández. 2018",
       "image": "/projects/por_amor.png",
       "categories": ["CINE"],
@@ -210,7 +210,7 @@ const ProjectsSection = () => {
     },
     {
       "id": 18,
-      "title": "LA HUIDA (CORTOMETRAJE - Argentina)",
+      "title": "LA HUIDA (Argentina)",
       "description": "Director de sonido. Composición, interpretación y grabación de música original. Realización y Dirección: Guillermo Lazarte. 2018 - 2017",
       "image": "/projects/la_huida.png",
       "categories": ["CINE", "VARIOS"],
@@ -222,7 +222,7 @@ const ProjectsSection = () => {
     },
     {
       "id": 19,
-      "title": "FLAUTA MÁGICA NRO.1247 (CORTOMETRAJE)",
+      "title": "FLAUTA MÁGICA NRO.1247",
       "description": "Composición, interpretación y grabación de música original (colaboración con Gonzalo Varela). Realización y Dirección: Lucía Fidalgo. 2014",
       "image": "/projects/flauta_magica.png",
       "categories": ["CINE"],
@@ -232,7 +232,7 @@ const ProjectsSection = () => {
     },
     {
       "id": 20,
-      "title": "SCOTT WHISKERS: The Search for the Golden Cat (VIDEOJUEGO - Alemania)",
+      "title": "SCOTT WHISKERS: The Search for the Golden Cat (Alemania)",
       "description": "Composición, interpretación, grabación y mezcla de música original (20 tracks). Desarrollador: Alex Friedrich. Realización: Fancy Factory. 2024",
       "image": "/projects/goldencat.jpg",
       "categories": ["VIDEOJUEGO"],
@@ -240,7 +240,7 @@ const ProjectsSection = () => {
     },
     {
       "id": 21,
-      "title": "SCOTT WHISKERS: The search for Mr. Fumbleclaw (VIDEOJUEGO - Alemania)",
+      "title": "SCOTT WHISKERS: The search for Mr. Fumbleclaw (Alemania)",
       "description": "Composición, interpretación, grabación y mezcla de música original (2 tracks, colaboración con Bruno Boselli). Desarrollador: Alex Friedrich. Realización: Fancy Factory. 2023",
       "image": "/projects/fumbleclaw.png",
       "categories": ["VIDEOJUEGO"],
@@ -252,7 +252,7 @@ const ProjectsSection = () => {
     },
     {
       "id": 22,
-      "title": "CASTILLO INFLADO (OBRA DE TEATRO)",
+      "title": "CASTILLO INFLADO",
       "description": "Composición, interpretación y grabación de música original (colaboración con Gonzalo Varela). Ganadora del Fondo Concursables para la Cultura (MEC) y mención en Premio Literario Juan Carlos Onetti. Estreno Sala Vaz Ferreira (SODRE). Dirección: Bruno Acevedo Quevedo. 2022 - 2021",
       "image": "/projects/castillo_inflado.png",
       "categories": ["TEATRO", "ALBUM"],
@@ -267,7 +267,7 @@ const ProjectsSection = () => {
     },
     {
       "id": 23,
-      "title": "CHOCHAS (OBRA DE RADIOTEATRO)",
+      "title": "CHOCHAS",
       "description": "Diseño de sonido. Grabación y edición de diálogos, editor de SFX y mezcla. Adaptación de la obra teatral 'Club de chochas', ganadora del concurso 'Ficción sonora' realizado por el Teatro Solís. Dirección: Luis Pazos. 2021",
       "image": "/projects/chochas.png",
       "categories": ["AUDIO"],
@@ -278,7 +278,7 @@ const ProjectsSection = () => {
     },
     {
       "id": 24,
-      "title": "CASI DAHIANA (OBRA DE TEATRO)",
+      "title": "CASI DAHIANA",
       "description": "Composición, interpretación, grabación y mezcla de música original. Diseñador sonoro. Seleccionada por el Programa de Fortalecimiento de las Artes. Ganadora del Premio Florencio 2021 en 'Mejor Actriz de Unipersonal'. Estreno en el teatro Stella D'Italia. Dirección: Anthony Fletcher. 2020",
       "image": "/projects/casi_dahiana.png",
       "categories": ["TEATRO", "AUDIO"],
@@ -291,7 +291,7 @@ const ProjectsSection = () => {
     },
     {
       "id": 25,
-      "title": "SI NO ME COME LA NOCHE (OBRA DE TEATRO)",
+      "title": "SI NO ME COME LA NOCHE",
       "description": "Composición, grabación, interpretación y mezcla de música original. Diseñador sonoro y técnico operador. Estreno en 'La cretina' y ciclo 'Nuevas dramaturgias' en Sala Vaz Ferreira. Dirección: Gustavo Kreiman. 2019",
       "image": "/projects/si_no_me_come.jpg",
       "categories": ["TEATRO", "AUDIO"],
@@ -301,7 +301,7 @@ const ProjectsSection = () => {
     },
     {
       "id": 26,
-      "title": "CUANDO TERMINA LA PRIMAVERA (OBRA DE TEATRO)",
+      "title": "CUANDO TERMINA LA PRIMAVERA",
       "description": "Composición, grabación, interpretación y mezcla de música original. Diseñador sonoro y técnico operador. Ganadora del Programa de Fortalecimiento de las Artes. Dirección: José Pagano. 2018",
       "image": "/projects/primavera.png",
       "categories": ["TEATRO", "AUDIO"],
@@ -312,7 +312,7 @@ const ProjectsSection = () => {
     },
     {
       "id": 27,
-      "title": "CONFERENCIA SOBRE LA LLUVIA (OBRA DE TEATRO)",
+      "title": "CONFERENCIA SOBRE LA LLUVIA",
       "description": "Composición, interpretación y grabación de música original. Ganadora del premio COFONTE. Estreno 'Teatro del Notariado'. Dirección: Eduardo Cervieri. 2022",
       "image": "/projects/conferencia.png",
       "categories": ["TEATRO", "ALBUM"],
@@ -325,7 +325,7 @@ const ProjectsSection = () => {
     },
     {
       "id": 28,
-      "title": "SUEÑO DE LA PROCESIÓN DE SUS MUERTOS (OBRA DE TEATRO)",
+      "title": "SUEÑO DE LA PROCESIÓN DE SUS MUERTOS",
       "description": "Diseñador sonoro y composición, grabación, interpretación y mezcla de música original (colaboración con Gonzalo Varela). Ganadora Premios Florencio 2023 a 'Mejor Escena Alternativa' y nominada en Mejor Ambientación sonora, Vestuario, Escenografía, Iluminación y Elenco. Realización: Animalismo Teatro. Dirección: Santiago Lans. 2023 - 2021",
       "image": "/projects/procesion.jpg",
       "categories": ["TEATRO", "ALBUM"],
@@ -340,7 +340,7 @@ const ProjectsSection = () => {
     },
     {
       "id": 29,
-      "title": "LORCA EN LAS TRINCHERAS DE MADRID (OBRA DE TEATRO)",
+      "title": "LORCA EN LAS TRINCHERAS DE MADRID",
       "description": "Diseño sonoro y composición de música original (colaboración con Gonzalo Varela). Estreno en teatro El Galpón. Dirección: Adhemar Bianchi y Ximena Bianchi. 2017",
       "image": "/projects/lorca.png",
       "categories": ["TEATRO"],
@@ -351,7 +351,7 @@ const ProjectsSection = () => {
     },
     {
       "id": 30,
-      "title": "BANG BANG, ESTÁS MUERTO (OBRA DE TEATRO)",
+      "title": "BANG BANG, ESTÁS MUERTO",
       "description": "Diseño sonoro y composición, interpretación, grabación y mezcla de música original (colaboración con Gonzalo Varela). Nominada a 4 Premios 'Florencio 2016' incluyendo 'Mejor Ambientación Sonora'. Estreno teatro El Galpón. Dirección: Dante Alfonso. 2016",
       "image": "/projects/bang.png",
       "categories": ["TEATRO"],
@@ -363,7 +363,7 @@ const ProjectsSection = () => {
     },
     {
       "id": 31,
-      "title": "HECHOS CONSUMADOS (OBRA DE TEATRO)",
+      "title": "HECHOS CONSUMADOS",
       "description": "Diseño sonoro y composición, interpretación, grabación y mezcla de música original (colaboración con Gonzalo Varela). Estreno en teatro El Galpón. Dirección: Dardo Delgado. 2016",
       "image": "/projects/hechos_consumados.jpg",
       "categories": ["TEATRO"],
@@ -373,7 +373,7 @@ const ProjectsSection = () => {
     },
     {
       "id": 32,
-      "title": "ELIXIR (OBRA DE TEATRO)",
+      "title": "ELIXIR",
       "description": "Composición, grabación, interpretación y mezcla de música original. Diseño sonoro y técnico operador (colaboración con Gonzalo Varela). Ganadora mención 'mejor espectáculo Movida Joven 2016' Realización: Animalismo Teatro. Dirección: Santiago Lans. 2016",
       "image": "/projects/elixir.jpg",
       "categories": ["TEATRO", "ALBUM"],
@@ -383,7 +383,7 @@ const ProjectsSection = () => {
     },
     {
       "id": 33,
-      "title": "EL ALA QUEBRADIZA DE LA MARIPOSA (OBRA DE TEATRO)",
+      "title": "EL ALA QUEBRADIZA DE LA MARIPOSA",
       "description": "Composición, interpretación, grabación y mezcla de música original. Diseño sonoro y técnico operador (colaboración con Gonzalo Varela). Estreno teatro El Galpón. Dirección: Dante Alfonso. 2015",
       "image": "/projects/el_ala_quebradiza.jpg",
       "categories": ["TEATRO"],
@@ -394,7 +394,7 @@ const ProjectsSection = () => {
     },
     {
       "id": 34,
-      "title": "MOSQUITO (OBRA DE TEATRO)",
+      "title": "MOSQUITO",
       "description": "Composición, grabación, interpretación y mezcla de música original. Diseñador sonoro y técnico operador. Dirección: Paolo Grosso y Mauro Olivera. 2018",
       "image": "/projects/mosquito.jpg",
       "categories": ["TEATRO", "AUDIO"],
@@ -404,7 +404,7 @@ const ProjectsSection = () => {
     },
     {
       "id": 35,
-      "title": "HABBUK (OBRA DE TEATRO - Uruguay- Canadá - Islandia)",
+      "title": "HABBUK (Uruguay- Canadá - Islandia)",
       "description": "Composición, grabación, interpretación y mezcla de música original. Diseñador sonoro y técnico operador (colaboración con Gonzalo Varela). Realización: Animalismo Teatro. Dirección: Santiago Lans. 2018 - 2017",
       "image": "/projects/habbuk.jpg",
       "categories": ["TEATRO", "ALBUM"],
@@ -420,7 +420,7 @@ const ProjectsSection = () => {
     },
     {
       "id": 36,
-      "title": "LO CONTRARIO (OBRA DE TEATRO)",
+      "title": "LO CONTRARIO",
       "description": "Composición, grabación, interpretación y mezcla de música original. Diseñador sonoro y técnico operador. Dirección: Sebastián Calderón. 2018",
       "image": "/projects/lo_contrario.jpg",
       "categories": ["TEATRO", "AUDIO"],
@@ -430,7 +430,7 @@ const ProjectsSection = () => {
     },
     {
       "id": 37,
-      "title": "NO SE ELIGE SER UN HÉROE (OBRA DE TEATRO)",
+      "title": "NO SE ELIGE SER UN HÉROE",
       "description": "Composición, interpretación, grabación y mezcla de música original. Estreno teatro Circular. Dirección: Eduardo Cervieri. 2015",
       "image": "/projects/no_se_elige_ser_un_heroe.jpg",
       "categories": ["TEATRO"],
@@ -452,7 +452,7 @@ const ProjectsSection = () => {
     },
     {
       "id": 39,
-      "title": "'1989' DEL GRUPO 'ENSAMBLE DE JAZZ GITANO' (FONOGRAMA)",
+      "title": "'1989' DEL GRUPO 'ENSAMBLE DE JAZZ GITANO'",
       "description": "Dirección de sonido. Interpretación en guitarra y voz. Grabado en los Estudios Sondor. Dirección general: Angel Varela Rey. 2020",
       "image": "/projects/1989_ensamble_jazz_gitano.jpg",
       "categories": ["MUSICA", "VARIOS"],
