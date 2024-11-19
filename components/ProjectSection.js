@@ -58,7 +58,7 @@ const ProjectsSection = () => {
       title: "UNA LUZ AFUERA",
       description: "Composición, interpretación, grabación y mezcla de música original. Diseñador sonoro. Ganadora del fondo Montevideo Audiovisual 2022. Estreno en cines septiembre 2024. Dirección: José Elizalde. Producción: Gardeliam. 2021 - 2022",
       image: "/projects/una_luz.jpeg",
-      categories: ["CINE", "ALBUM", "AUDIO"],
+      categories: ["CINE", "AUDIO"],
       links: [
         { 
           url: "https://www.youtube.com/watch?v=M_3NH3EIpvk",
@@ -94,7 +94,7 @@ const ProjectsSection = () => {
     },
     {
       "id": 6,
-      "title": "'SABOREANDO LA SOSTENIBILIDAD EN URUGUAY', Instituto SARAS (COMERCIAL)",
+      "title": "'SABOREANDO LA SOSTENIBILIDAD EN URUGUAY', Instituto SARAS",
       "description": "Composición, interpretación, grabación y mezcla de música original. Sonido directo, edición de diálogos y postproducción de sonido. Realización y dirección: Guillermo Amato. 2020",
       "image": "/projects/saboreando.png",
       "categories": ["VARIOS", "AUDIO"],
@@ -255,7 +255,7 @@ const ProjectsSection = () => {
       "title": "CASTILLO INFLADO",
       "description": "Composición, interpretación y grabación de música original (colaboración con Gonzalo Varela). Ganadora del Fondo Concursables para la Cultura (MEC) y mención en Premio Literario Juan Carlos Onetti. Estreno Sala Vaz Ferreira (SODRE). Dirección: Bruno Acevedo Quevedo. 2022 - 2021",
       "image": "/projects/castillo_inflado.png",
-      "categories": ["TEATRO", "ALBUM"],
+      "categories": ["TEATRO"],
       "links": [
         { "url": "https://open.spotify.com/intl-es/album/0VsvWlxm33ynIJ1Zgl9dJP?si=94pHpdhzQQOE8I2fFMJCZw", "text": "Spotify" },
         { "url": "https://www.youtube.com/playlist?list=OLAK5uy_nK0yWmLg-oFjRNkCHqbhWWEulglREf1lM", "text": "YouTube" },
@@ -315,7 +315,7 @@ const ProjectsSection = () => {
       "title": "CONFERENCIA SOBRE LA LLUVIA",
       "description": "Composición, interpretación y grabación de música original. Ganadora del premio COFONTE. Estreno 'Teatro del Notariado'. Dirección: Eduardo Cervieri. 2022",
       "image": "/projects/conferencia.png",
-      "categories": ["TEATRO", "ALBUM"],
+      "categories": ["TEATRO"],
       "links": [
         { "url": "https://open.spotify.com/intl-es/album/1YIZ1RvzYm15GvHlJlqoyL?si=c_x6Fvp5TmaECcu8DykD9g", "text": "Escuchar en Spotify" },
         { "url": "https://www.youtube.com/watch?v=kWXH8W0wsxo&list=OLAK5uy_nnCnv12RXEUbtWDszQy4cOdiyyktRKyP0", "text": "Escuchar en YouTube" },
@@ -328,7 +328,7 @@ const ProjectsSection = () => {
       "title": "SUEÑO DE LA PROCESIÓN DE SUS MUERTOS",
       "description": "Diseñador sonoro y composición, grabación, interpretación y mezcla de música original (colaboración con Gonzalo Varela). Ganadora Premios Florencio 2023 a 'Mejor Escena Alternativa' y nominada en Mejor Ambientación sonora, Vestuario, Escenografía, Iluminación y Elenco. Realización: Animalismo Teatro. Dirección: Santiago Lans. 2023 - 2021",
       "image": "/projects/procesion.jpg",
-      "categories": ["TEATRO", "ALBUM"],
+      "categories": ["TEATRO"],
       "links": [
         { "url": "https://open.spotify.com/intl-es/album/17U8tv4j59Z5HLLAQGVDLU?si=sRR4LNDsR8G7Fy-Szcw7yg", "text": "Escuchar en Spotify" },
         { "url": "https://www.youtube.com/watch?v=W6Ydw-jp6cs&list=OLAK5uy_kLezU6Qz13JmbX_CBQ1aFSIBJcTRSfpjs", "text": "Escuchar en YouTube" },
@@ -376,7 +376,7 @@ const ProjectsSection = () => {
       "title": "ELIXIR",
       "description": "Composición, grabación, interpretación y mezcla de música original. Diseño sonoro y técnico operador (colaboración con Gonzalo Varela). Ganadora mención 'mejor espectáculo Movida Joven 2016' Realización: Animalismo Teatro. Dirección: Santiago Lans. 2016",
       "image": "/projects/elixir.jpg",
-      "categories": ["TEATRO", "ALBUM"],
+      "categories": ["TEATRO"],
       "links": [
         { "url": "https://animalismoteatro.com", "text": "Web de Animalismo Teatro" }
       ]
@@ -407,7 +407,7 @@ const ProjectsSection = () => {
       "title": "HABBUK (Uruguay- Canadá - Islandia)",
       "description": "Composición, grabación, interpretación y mezcla de música original. Diseñador sonoro y técnico operador (colaboración con Gonzalo Varela). Realización: Animalismo Teatro. Dirección: Santiago Lans. 2018 - 2017",
       "image": "/projects/habbuk.jpg",
-      "categories": ["TEATRO", "ALBUM"],
+      "categories": ["TEATRO"],
       "links": [
         { "url": "https://open.spotify.com/album/69iXlzOnU9wmzCXYGoSzuw?si=5bX1uIhoRfih-4GpDWOd_Q", "text": "Escuchar en Spotify" },
         { "url": "https://www.youtube.com/playlist?list=OLAK5uy_nQzW2Nc3AzXeLYLwTWpqsF7TLduSDwZts", "text": "Escuchar en YouTube" },
@@ -483,7 +483,7 @@ const ProjectsSection = () => {
       "title": "LA MANUSH (GRUPO MUSICAL)",
       "description": "Composición, guitarrista y vocalista. 2011- 2016",
       "image": "/projects/la_manush.jpg",
-      "categories": ["MUSICA", "INTÉRPRETE MUSICAL", "ALBUM"],
+      "categories": ["MUSICA"],
       "links": [
         { "url": "#", "text": "Escuchar disco" }
       ]
@@ -508,7 +508,6 @@ const ProjectsSection = () => {
     { id: 'TEATRO', label: t('Theatre') },
     { id: 'MUSICA', label: t('Music') },
     { id: 'VARIOS', label: t('Various') },
-    { id: 'ALBUM', label: t('Albums') },
     { id: 'AUDIO', label: t('Audio') },
   ];
 
