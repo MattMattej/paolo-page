@@ -17,11 +17,13 @@ const HomeSection = () => {
   }, []);
 
   const toggleExpand = (sectionKey) => {
-    setExpandedSections(prevState => ({
+    setExpandedSections((prevState) => ({
       ...prevState,
-      [sectionKey]: !prevState[sectionKey]
+      [sectionKey]: !prevState[sectionKey],
     }));
   };
+
+  const isAnySectionExpanded = Object.values(expandedSections).some(Boolean);
 
   return (
     <section
@@ -29,13 +31,25 @@ const HomeSection = () => {
       className={`${styles.homeSection} ${isVisible ? styles.visible : ''}`}
     >
       <div className={styles.overlay}></div>
-      <div className={styles.container}>
-        <div className={`${styles.content} ${isVisible ? styles.fadeIn : ''}`}>
+      <div
+        className={`${styles.container} ${
+          isAnySectionExpanded ? styles.shifted : ''
+        }`}
+      >
+        <div
+          className={`${styles.content} ${
+            isAnySectionExpanded ? styles.shiftUp : ''
+          } ${isVisible ? styles.fadeIn : ''}`}
+        >
           <div className={styles.textContent}>
             <p className={styles.description}>{t('home_description')}</p>
           </div>
         </div>
-        <div className={`${styles.expandableSections} ${isVisible ? styles.fadeInUp : ''}`}>
+        <div
+          className={`${styles.expandableSections} ${
+            isVisible ? styles.fadeInUp : ''
+          } ${isAnySectionExpanded ? styles.expanded : ''}`}
+        >
           <ExpandableSection
             title={t('expandable_title_1')}
             content={t('expandable_content_1')}

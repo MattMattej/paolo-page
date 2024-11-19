@@ -16,7 +16,14 @@ const BioSection = () => {
         <div className={styles.bioContent}>
           <div className={`${styles.bioBlock} ${styles.blockReverse}`}>
             <div className={styles.bioImages}>
-              <Image 
+            
+            </div>
+            
+          </div>
+          
+          <div className={styles.bioBlock}>
+            <div className={styles.bioImages}>
+            <Image 
                 src='/A-24.jpg' 
                 alt='Paolo Grosso' 
                 width={350} 
@@ -29,43 +36,14 @@ const BioSection = () => {
               <p><strong>Franco Paolo Grosso González</strong></p>
               <p>{t('bio_text_1')}</p>
             </div>
+            
           </div>
-          
-          <div className={styles.bioBlock}>
-            <div className={styles.bioImages}>
-              <Image 
-                src='/A-22.jpg' 
-                alt='Paolo Grosso' 
-                width={300} 
-                height={400} 
-                objectFit='contain' 
-                className={styles.image}
-              />
-            </div>
-            <div className={styles.bioText}>
+          <div className={styles.bioText}>
               <p>{t('bio_text_2')}</p>
             </div>
-          </div>
-
           <div className={`${styles.bioBlock} ${styles.blockReverse}`}>
             <div className={styles.bioImages}>
-              <Image 
-                src='/A-14.jpg' 
-                alt='Paolo Grosso' 
-                width={300} 
-                height={450} 
-                objectFit='contain' 
-                className={styles.image}
-              />
-            </div>
-            <div className={styles.bioText}>
-              <p>{t('bio_text_3')}</p>
-            </div>
-          </div>
-
-          <div className={styles.bioBlock}>
-            <div className={styles.bioImages}>
-              <Image 
+            <Image 
                 src='/A-35.jpg' 
                 alt='Paolo Grosso' 
                 width={480} 
@@ -75,25 +53,18 @@ const BioSection = () => {
               />
             </div>
             <div className={styles.bioText}>
-              <p>{t('bio_text_4')}</p>
+              <p>{t('bio_text_3')}</p>
             </div>
+            
           </div>
-
-          <div className={`${styles.bioBlock} ${styles.blockReverse}`}>
-            <div className={styles.bioImages}>
-              <Image 
-                src='/A-17.jpg' 
-                alt='Paolo Grosso' 
-                width={290} 
-                height={420} 
-                objectFit='contain' 
-                className={styles.image}
-              />
+          
+            <div className={styles.bioText}>
+              <p>{t('bio_text_4')}</p>
             </div>
             <div className={styles.bioText}>
               <p>{t('bio_text_5')}</p>
             </div>
-          </div>
+         
           
           <div className={styles.socialIcons}>
             <a href='https://www.youtube.com/user/PaoloGrosso' target='_blank' rel='noopener noreferrer'>
