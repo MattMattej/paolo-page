@@ -59,7 +59,7 @@ const BioSection = () => {
               />
             </div>
             <div className={styles.bioText}>
-             
+            <p>{t('bio_text_3')}</p>
               <p>{t('bio_text_4')}</p>
               <p>{t('bio_text_5')}</p>
             </div>
