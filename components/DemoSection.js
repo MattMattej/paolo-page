@@ -47,22 +47,16 @@ const DemosSection = () => {
   ];
 
   const toggleDemoExpand = (id) => {
-    setExpandedDemo(expandedDemo === id ? null : id);
+    if (expandedDemo === id) {
+      // Si el modal ya está abierto, cerramos el modal
+      setExpandedDemo(null);
+      setPlayingAudio(null);
+    } else {
+      // Si el modal está cerrado, lo abrimos con el video correspondiente
+      setExpandedDemo(id);
+      setPlayingAudio(null); // Reseteamos el audio
+    }
   };
-
-  // Keyboard support for closing modal
-  useEffect(() => {
-    const handleEscKey = (event) => {
-      if (event.key === 'Escape' && expandedDemo) {
-        setExpandedDemo(null);
-      }
-    };
-
-    window.addEventListener('keydown', handleEscKey);
-    return () => {
-      window.removeEventListener('keydown', handleEscKey);
-    };
-  }, [expandedDemo]);
 
   const renderDemoContent = (demo) => {
     const isExpanded = expandedDemo === demo.id;
@@ -90,6 +84,7 @@ const DemosSection = () => {
                     height="100%"
                     controls={true}
                     playing={true}
+                    onEnded={() => setExpandedDemo(null)} // Cierra el modal cuando termina el video
                   />
                 </div>
               ) : (
@@ -131,15 +126,16 @@ const DemosSection = () => {
           </div>
         )}
 
+        {/* Video o miniatura */}
         {demo.type === 'video' ? (
-          <div className={styles.videoContainer}>
+          <div className={styles.videoContainer} onClick={() => toggleDemoExpand(demo.id)}>
             <ReactPlayer
               url={demo.src}
               width="100%"
               height="100%"
-              light={true}
-              playIcon={<button className={styles.expandButton}>Play</button>}
-              onClickPreview={() => toggleDemoExpand(demo.id)}
+              light={true}  // La miniatura del video se muestra
+              playIcon={null} // Elimina el ícono de play de la miniatura
+              playing={false} // No lo reproduce automáticamente
             />
           </div>
         ) : (
