@@ -1,13 +1,31 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import Image from 'next/image';
 import styles from '../styles/DemoSection.module.css';
 import ReactPlayer from 'react-player';
+import ExpandableSection from './ExpandableSection';
 
 const DemosSection = () => {
   const { t } = useTranslation();
   const [expandedVideo, setExpandedVideo] = useState(null);
   const [playingAudio, setPlayingAudio] = useState(null);
+  const [expandedSections, setExpandedSections] = useState({
+    section1: false,
+    section2: false,
+    section3: false,
+  });
+  const [isVisible, setIsVisible] = useState(false);
+  const hasExpandedSections = Object.values(expandedSections).some((value) => value);
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
+
+  const toggleExpand = (sectionKey) => {
+    setExpandedSections(prevState => ({
+      ...prevState,
+      [sectionKey]: !prevState[sectionKey]
+    }));
+  };
 
   const demos = [
     {
@@ -19,28 +37,28 @@ const DemosSection = () => {
     {
       id: 2,
       type: 'audio',
-      image: '/fondo1.webp',
+      image: '/demo0.png',
       src: '/track1.mp3',
-      title: t('Estilos varios A'),
+      title: t('Explore/Adventure'),
     },
     {
       id: 3,
       type: 'audio',
-      image: '/fondo1.webp',
+      image: '/demo1.png',
       src: '/track2.mp3',
       title: t('Estilos varios B'),
     },
     {
       id: 4,
       type: 'audio',
-      image: '/fondo1.webp',
+      image: '/demo2.png',
       src: '/track3.mp3',
       title: t('Estilos varios C'),
     },
     {
       id: 5,
       type: 'audio',
-      image: '/fondo1.webp',
+      image: '/demo3.png',
       src: '/track4.mp3',
       title: t('Estilos varios D'),
     },
@@ -59,9 +77,12 @@ const DemosSection = () => {
   };
 
   return (
-    <section id='demos' className={styles.demosSection}>
-      <div className={styles.container}>
-        <h2 className={styles.title}>{t('Demos')}</h2>
+    <section id="demos" className={styles.demosSection}>
+    <div className={styles.container}>
+      <h2 className={styles.title}>{t('Demos')}</h2>
+
+
+        {/* Grid de demos */}
         <div className={styles.demoGrid}>
           {demos.map((demo) => (
             <div key={demo.id} className={styles.demoCard}>
@@ -87,7 +108,7 @@ const DemosSection = () => {
                       src={demo.image}
                       alt={demo.title}
                       layout="fill"
-                      objectFit="cover"
+                       objectFit="contain"
                       className={styles.demoImage}
                     />
                   </div>

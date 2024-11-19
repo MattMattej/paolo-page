@@ -13,8 +13,8 @@ const Footer = () => {
         <div className={styles.container}>
           <div className={styles.contactInfo}>
             <h3 className={styles.title}>{t('contact_title')}</h3>
-            <p>{t('contact_email')} contacto@example.com</p>
-            <p>{t('contact_phone')} +123 456 789</p>
+            <p>{t('contact_email')} paologrosso@gmail.com</p>
+         
           </div>
           <div className={styles.socialIcons}>
             <a href='https://www.youtube.com/user/PaoloGrosso' target='_blank' rel='noopener noreferrer'>

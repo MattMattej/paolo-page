@@ -24,7 +24,10 @@ const HomeSection = () => {
   };
 
   return (
-    <section id="home" className={`${styles.homeSection} ${isVisible ? styles.visible : ''}`}>
+    <section
+      id="home"
+      className={`${styles.homeSection} ${isVisible ? styles.visible : ''}`}
+    >
       <div className={styles.overlay}></div>
       <div className={styles.container}>
         <div className={`${styles.content} ${isVisible ? styles.fadeIn : ''}`}>

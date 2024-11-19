@@ -42,7 +42,7 @@ export default function Navbar() {
       <div className={styles.navItems}>
         <ul className={`${styles.ul} ${isMenuOpen ? styles.show : ''}`}>
           <li className={styles.li} onClick={() => scrollToSection('demos')}>{t('demos')}</li>
-          <li className={styles.li} onClick={() => scrollToSection('listen')}>{t('listen')}</li>
+          <li className={styles.li} onClick={() => scrollToSection('Albums')}>{t('Albums')}</li>
           <li className={styles.li} onClick={() => scrollToSection('projects')}>{t('projects')}</li>
           <li className={styles.li} onClick={() => scrollToSection('bio')}>{t('bio')}</li>
           <li className={styles.li} onClick={() => scrollToSection('contact')}>{t('contact')}</li>

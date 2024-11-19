@@ -75,7 +75,7 @@
 }
 
 .demoImage {
-  object-fit: cover;
+  object-fit: contein;
 }
 
 .audioPlayerWrapper {

@@ -1,17 +1,19 @@
 .homeSection {
-  min-height: 100vh;
+  min-height: calc(100vh ); /* Asegura que la sección ocupe toda la pantalla menos la altura del navbar */
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url('/paolo2.png');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  background-image: url('/A-3.jpg'); /* Aquí está la imagen que quieres usar */
+  background-size: cover; /* Asegura que la imagen cubra toda el área de la sección */
+  background-position: center center; /* Centra la imagen */
+  background-attachment: fixed; /* Mantiene la imagen fija al hacer scroll */
   position: relative;
   color: white;
-  margin-top: 80px;
   opacity: 0;
   transition: opacity 1s ease-in-out;
+  z-index: 0; /* Asegura que la imagen quede debajo del contenido */
+  padding-top: 80px; /* Da espacio para que la sección empiece justo debajo del navbar */
+  
 }
 
 .homeSection.visible {
@@ -24,7 +26,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.5); /* Crea una superposición para mejorar la legibilidad */
 }
 
 .container {
@@ -33,14 +35,132 @@
   margin: 0 auto;
   padding: 2rem 1rem;
   position: relative;
-  z-index: 1;
+  z-index: 1; /* El contenido estará por encima de la imagen */
   display: flex;
   flex-direction: column;
   align-items: center;
+
 }
 
 .content {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem;.homeSection {
+    min-height: calc(100vh - 80px); /* Asegura que la altura de la sección sea el 100% de la pantalla menos el navbar */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('/A-3.jpg'); /* La imagen que deseas mostrar */
+    background-size: contain; /* Hace que la imagen se ajuste sin recortarse */
+
+    background-position: center center; /* Asegura que la imagen esté centrada */
+    background-repeat: no-repeat; /* Evita que la imagen se repita si no cubre toda la sección */
+    position: relative;
+    color: white;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    padding-top: 80px; /* Ajusta la altura inicial de la sección para que empiece después del navbar */
+    z-index: 0; /* Asegura que la imagen esté detrás del contenido */
+  }
+  
+  .homeSection.visible {
+    opacity: 1;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Superposición para mejorar la visibilidad del texto */
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    position: relative;
+    z-index: 1; /* El contenido debe estar por encima de la imagen */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .content {
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    transition: opacity 1s ease-in-out 0.5s;
+    text-align: center;
+    object-fit: contain; 
+  }
+  
+  .content.fadeIn {
+    opacity: 1;
+  }
+  
+  .textContent {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .description {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+  
+  .expandableSections {
+    display: grid;
+    gap: 20px;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-in-out 1s, transform 1s ease-in-out 1s;
+  }
+  
+  .expandableSections.fadeInUp {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  @media (min-width: 769px) {
+    .expandableSections {
+      grid-template-columns: repeat(3, 1fr);
+      align-items: start;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .homeSection {
+      padding-top: 120px; /* Asegura que la sección tenga espacio suficiente en pantallas pequeñas */
+      background-attachment: scroll; /* Desactiva el fondo fijo en móviles */
+    }
+  
+    .expandableSections {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
   opacity: 0;
   transition: opacity 1s ease-in-out 0.5s;
   text-align: center;
@@ -84,8 +204,8 @@
 
 @media (max-width: 768px) {
   .homeSection {
-    margin-top: 60px;
-    background-attachment: scroll;
+    padding-top: 120px; /* Ajusta el espacio superior en pantallas pequeñas */
+    background-attachment: scroll; /* Desactiva el fondo fijo en móviles para evitar problemas */
   }
 
   .expandableSections {

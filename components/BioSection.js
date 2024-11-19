@@ -14,47 +14,100 @@ const BioSection = () => {
           <span>{t('About Paolo')}</span>
         </h2>
         <div className={styles.bioContent}>
-          <div className={styles.bioImages}>
-            <Image 
-              src='/paolo1.png' 
-              alt='Paolo Grosso' 
-              width={300} 
-              height={300} 
-              objectFit='cover' 
-              className={styles.image}
-            />
-            <div className={styles.socialIcons}>
-              <a href='https://www.youtube.com/user/PaoloGrosso' target='_blank' rel='noopener noreferrer'>
-                <FontAwesomeIcon icon={faYoutube} className={styles.icon} />
-              </a>
-              <a href='https://www.linkedin.com/in/francopaologrosso/' target='_blank' rel='noopener noreferrer'>
-                <FontAwesomeIcon icon={faLinkedin} className={styles.icon} />
-              </a>
-              <a href='https://open.spotify.com/artist/71emEmZqNA92fpj1aBzsVF' target='_blank' rel='noopener noreferrer'>
-                <FontAwesomeIcon icon={faSpotify} className={styles.icon} />
-              </a>
-              <a href='https://www.instagram.com/the_smokeymonkey/' target='_blank' rel='noopener noreferrer'>
-                <FontAwesomeIcon icon={faInstagram} className={styles.icon} />
-              </a>
+          <div className={`${styles.bioBlock} ${styles.blockReverse}`}>
+            <div className={styles.bioImages}>
+              <Image 
+                src='/A-24.jpg' 
+                alt='Paolo Grosso' 
+                width={350} 
+                height={500} 
+                objectFit='contain' 
+                className={styles.image}
+              />
             </div>
-          </div>
-          <div className={styles.bioText}>
-            <div className={styles.bioBlock}>
+            <div className={styles.bioText}>
               <p><strong>Franco Paolo Grosso González</strong></p>
               <p>{t('bio_text_1')}</p>
             </div>
-            <div className={styles.bioBlock}>
+          </div>
+          
+          <div className={styles.bioBlock}>
+            <div className={styles.bioImages}>
+              <Image 
+                src='/A-22.jpg' 
+                alt='Paolo Grosso' 
+                width={300} 
+                height={400} 
+                objectFit='contain' 
+                className={styles.image}
+              />
+            </div>
+            <div className={styles.bioText}>
               <p>{t('bio_text_2')}</p>
             </div>
-            <div className={styles.bioBlock}>
+          </div>
+
+          <div className={`${styles.bioBlock} ${styles.blockReverse}`}>
+            <div className={styles.bioImages}>
+              <Image 
+                src='/A-14.jpg' 
+                alt='Paolo Grosso' 
+                width={300} 
+                height={450} 
+                objectFit='contain' 
+                className={styles.image}
+              />
+            </div>
+            <div className={styles.bioText}>
               <p>{t('bio_text_3')}</p>
             </div>
-            <div className={styles.bioBlock}>
+          </div>
+
+          <div className={styles.bioBlock}>
+            <div className={styles.bioImages}>
+              <Image 
+                src='/A-35.jpg' 
+                alt='Paolo Grosso' 
+                width={480} 
+                height={400} 
+                objectFit='contain' 
+                className={styles.image}
+              />
+            </div>
+            <div className={styles.bioText}>
               <p>{t('bio_text_4')}</p>
             </div>
-            <div className={styles.bioBlock}>
+          </div>
+
+          <div className={`${styles.bioBlock} ${styles.blockReverse}`}>
+            <div className={styles.bioImages}>
+              <Image 
+                src='/A-17.jpg' 
+                alt='Paolo Grosso' 
+                width={290} 
+                height={420} 
+                objectFit='contain' 
+                className={styles.image}
+              />
+            </div>
+            <div className={styles.bioText}>
               <p>{t('bio_text_5')}</p>
             </div>
+          </div>
+          
+          <div className={styles.socialIcons}>
+            <a href='https://www.youtube.com/user/PaoloGrosso' target='_blank' rel='noopener noreferrer'>
+              <FontAwesomeIcon icon={faYoutube} className={styles.icon} />
+            </a>
+            <a href='https://www.linkedin.com/in/francopaologrosso/' target='_blank' rel='noopener noreferrer'>
+              <FontAwesomeIcon icon={faLinkedin} className={styles.icon} />
+            </a>
+            <a href='https://open.spotify.com/artist/71emEmZqNA92fpj1aBzsVF' target='_blank' rel='noopener noreferrer'>
+              <FontAwesomeIcon icon={faSpotify} className={styles.icon} />
+            </a>
+            <a href='https://www.instagram.com/the_smokeymonkey/' target='_blank' rel='noopener noreferrer'>
+              <FontAwesomeIcon icon={faInstagram} className={styles.icon} />
+            </a>
           </div>
         </div>
       </div>

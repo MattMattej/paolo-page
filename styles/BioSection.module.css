@@ -4,36 +4,41 @@
 }
 
 .title {
-  text-align: center; /* Alineación centrada */
-  font-size: 2.5rem; /* Ajuste al mismo tamaño que DemoSection */
-  margin-bottom: 40px; /* Mismo margen que DemoSection */
-  color: #fafafa!important; /* Color consistente */ 
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #fafafa!important;
 }
 
 .bioContent {
   display: flex;
-  gap: 40px;
-  flex-wrap: wrap;
-}
-
-.bioText {
-  flex: 2;
-  display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 40px;
 }
 
 .bioBlock {
-  background: black(255, 255, 255, 0.1);
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bioBlock .bioText,
+.bioBlock .bioImages {
+  flex: 1;
+}
+
+.bioBlock .bioText {
+  text-align: justify;
+  background: rgba(0, 0, 0, 0.1); /* Fondo translúcido */
   padding: 15px;
   border-radius: 8px;
+  color: white;
 }
 
 .bioImages {
-  flex: 1;
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  justify-content: center;
   align-items: center;
 }
 
@@ -46,6 +51,7 @@
   display: flex;
   gap: 15px;
   margin-top: 10px;
+  justify-content: center;
 }
 
 .icon {
@@ -58,8 +64,16 @@
   color: var(--primary-color);
 }
 
+.blockReverse {
+  flex-direction: row-reverse; /* Invierte el orden de los elementos */
+}
+
 @media (max-width: 768px) {
-  .bioContent {
+  .bioBlock {
     flex-direction: column;
+  }
+
+  .bioBlock .bioText {
+    text-align: center;
   }
 }
