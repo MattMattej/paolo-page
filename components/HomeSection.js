@@ -42,7 +42,7 @@ const HomeSection = () => {
           } ${isVisible ? styles.fadeIn : ''}`}
         >
           <div className={styles.textContent}>
-            <p className={styles.description}>{t('home_description')}</p>
+            <h1 className={styles.description}>{t('home_description')}</h1>
           </div>
         </div>
         <div

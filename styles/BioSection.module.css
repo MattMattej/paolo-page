@@ -1,5 +1,5 @@
 .bioSection {
-  background-color:  #000000 !important;
+  background-color: #000000 !important;
   padding: 40px 0;
 }
 
@@ -7,7 +7,7 @@
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 40px;
-  color: #fafafa!important;
+  color: #fafafa !important;
 }
 
 .bioContent {
@@ -24,7 +24,7 @@
 }
 
 .bioBlock .bioText,
-.bioBlock .bioImages {
+.bioBlock .bioImage {
   flex: 1;
 }
 
@@ -36,7 +36,7 @@
   color: white;
 }
 
-.bioImages {
+.bioImage {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -68,6 +68,16 @@
   flex-direction: row-reverse; /* Invierte el orden de los elementos */
 }
 
+/* Estilo de las primeras imágenes */
+.bioBlock:first-child .bioText {
+  order: 1; /* Asegura que el texto de la primera sección esté antes de la imagen */
+}
+
+.bioBlock:first-child .bioImage {
+  order: 2; /* La imagen ocupará toda la segunda parte */
+}
+
+/* Estilo para las pantallas pequeñas */
 @media (max-width: 768px) {
   .bioBlock {
     flex-direction: column;
@@ -75,5 +85,9 @@
 
   .bioBlock .bioText {
     text-align: center;
+  }
+
+  .bioImage {
+    margin-bottom: 20px; /* Separar imagen y texto en pantallas pequeñas */
   }
 }

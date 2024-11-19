@@ -1,6 +1,6 @@
 .demosSection {
   padding: 80px 0;
-  background-color: #fafafa;
+  background-color: #000000; /* Fondo negro */
 }
 
 .container {
@@ -13,7 +13,7 @@
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 40px;
-  color: black;
+  color: white; /* Texto en blanco */
 }
 
 .demoGrid {
@@ -30,7 +30,17 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+  margin-top: 20px; /* Margen superior igual al de abajo */
+  margin-bottom: 20px; /* Margen inferior de las tarjetas */
   transition: all 0.3s ease;
+}
+
+.demoCard img {
+  margin-top: 20px; /* Margen superior para la imagen */
+  width: 100%;
+  height: auto;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 
 .expandedOverlay {
@@ -39,7 +49,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.8);
+  background-color: rgba(0, 0, 0, 0.8);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -57,7 +67,7 @@
   flex-direction: column;
   overflow: hidden;
   position: relative;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .expandedVideoContainer {
@@ -147,7 +157,6 @@
 
 .audioPlayer > div {
   background-color: #000 !important;
-
 }
 
 .audioPlayer audio {
@@ -169,8 +178,6 @@
   color: black;
   text-align: center;
 }
-
-
 
 /* Responsive styles */
 @media (max-width: 1200px) {

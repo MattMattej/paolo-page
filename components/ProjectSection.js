@@ -54,23 +54,23 @@ const ProjectsSection = () => {
       ]
     },
     {
-      id: 4,
-      title: "UNA LUZ AFUERA",
-      description: "Composición, interpretación, grabación y mezcla de música original. Diseñador sonoro. Ganadora del fondo Montevideo Audiovisual 2022. Estreno en cines septiembre 2024. Dirección: José Elizalde. Producción: Gardeliam. 2021 - 2022",
-      image: "/projects/una_luz.jpeg",
-      categories: ["CINE", "AUDIO"],
-      links: [
+      "id": 4,
+      "title": "UNA LUZ AFUERA",
+      "description": "Composición, interpretación, grabación y mezcla de música original. Diseñador sonoro. Ganadora del fondo Montevideo Audiovisual 2022. Estreno en cines septiembre 2024. Dirección: José Elizalde. Producción: Gardeliam. 2021 - 2022",
+      "image": "/projects/una_luz.jpg",
+     "categories": ["CINE", "AUDIO"],
+      "links": [
         { 
-          url: "https://www.youtube.com/watch?v=M_3NH3EIpvk",
-          text: "Ver trailer"
+         "url": "https://www.youtube.com/watch?v=M_3NH3EIpvk",
+          "text": "Ver trailer"
         },
         { 
-          url: "https://open.spotify.com/album/666uXCB1uLPb7sdZ3fnEaJ",
-          text: "Escuchar en Spotify"
+          "url": "https://open.spotify.com/album/666uXCB1uLPb7sdZ3fnEaJ",
+          "text": "Escuchar en Spotify"
         },
         { 
-          url: "https://www.youtube.com/playlist?list=PLf9WXCV40h_Xm4Zs2KyKtajY4RuKXOBoP",
-          text: "Escuchar en YouTube"
+          "url": "https://www.youtube.com/playlist?list=PLf9WXCV40h_Xm4Zs2KyKtajY4RuKXOBoP",
+          "text": "Escuchar en YouTube"
         },
         { 
           url: "https://music.apple.com/hn/album/una-luz-afuera-original-motion-picture-soundtrack/1769240618",
@@ -327,7 +327,7 @@ const ProjectsSection = () => {
       "id": 28,
       "title": "SUEÑO DE LA PROCESIÓN DE SUS MUERTOS",
       "description": "Diseñador sonoro y composición, grabación, interpretación y mezcla de música original (colaboración con Gonzalo Varela). Ganadora Premios Florencio 2023 a 'Mejor Escena Alternativa' y nominada en Mejor Ambientación sonora, Vestuario, Escenografía, Iluminación y Elenco. Realización: Animalismo Teatro. Dirección: Santiago Lans. 2023 - 2021",
-      "image": "/projects/procesion.jpg",
+      "image": "/projects/procesion.png",
       "categories": ["TEATRO"],
       "links": [
         { "url": "https://open.spotify.com/intl-es/album/17U8tv4j59Z5HLLAQGVDLU?si=sRR4LNDsR8G7Fy-Szcw7yg", "text": "Escuchar en Spotify" },

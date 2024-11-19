@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import Image from 'next/image';
 import styles from '../styles/DemoSection.module.css';
@@ -62,15 +62,15 @@ const DemosSection = () => {
     const isExpanded = expandedDemo === demo.id;
 
     return (
-      <div 
-        key={demo.id} 
+      <div
+        key={demo.id}
         className={`${styles.demoCard} ${isExpanded ? styles.expanded : ''}`}
       >
         {isExpanded && (
           <div className={styles.expandedOverlay}>
             <div className={styles.expandedModalContent}>
-              <button 
-                className={styles.closeButton} 
+              <button
+                className={styles.closeButton}
                 onClick={() => toggleDemoExpand(demo.id)}
               >
                 ✕
@@ -113,9 +113,9 @@ const DemosSection = () => {
                         file: {
                           forceAudio: true,
                           attributes: {
-                            style: { outline: 'none' }
-                          }
-                        }
+                            style: { outline: 'none' },
+                          },
+                        },
                       }}
                     />
                   </div>
@@ -128,18 +128,21 @@ const DemosSection = () => {
 
         {/* Video o miniatura */}
         {demo.type === 'video' ? (
-          <div className={styles.videoContainer} onClick={() => toggleDemoExpand(demo.id)}>
+          <div
+            className={styles.videoContainer}
+            onClick={() => toggleDemoExpand(demo.id)}
+          >
             <ReactPlayer
               url={demo.src}
               width="100%"
               height="100%"
-              light={true}  // La miniatura del video se muestra
+              light={true} // La miniatura del video se muestra
               playIcon={null} // Elimina el ícono de play de la miniatura
               playing={false} // No lo reproduce automáticamente
             />
           </div>
         ) : (
-          <div 
+          <div
             className={styles.imageContainer}
             onClick={() => toggleDemoExpand(demo.id)}
           >
@@ -166,9 +169,9 @@ const DemosSection = () => {
                 file: {
                   forceAudio: true,
                   attributes: {
-                    style: { outline: 'none' }
-                  }
-                }
+                    style: { outline: 'none' },
+                  },
+                },
               }}
               className={styles.audioPlayer}
             />
