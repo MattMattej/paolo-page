@@ -1,9 +1,10 @@
 import React from 'react';
-import styles from '../styles/ImageSeparator.module.css';
+
 
 const ImageSeparator = () => {
   return (
     <div className={styles.imageSeparator}>
+    <h1> HOLA</h1>
       <img 
         src="/A-11.jpg" 
         alt="Separador"

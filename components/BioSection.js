@@ -52,7 +52,7 @@ const BioSection = () => {
               <Image 
                 src="/A-35.jpg" 
                 alt="Paolo Grosso" 
-                width={680} 
+                width={580} 
                 height={500} 
                 objectFit="contain" 
                 className={styles.image}

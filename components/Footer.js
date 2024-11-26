@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import styles from '../styles/Footer.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faYoutube, faLinkedin, faSpotify, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons'; // Importa desde free-solid-svg-icons
 
 const Footer = () => {
   const { t } = useTranslation(); // Importamos i18n hook
@@ -14,9 +15,12 @@ const Footer = () => {
           <div className={styles.contactInfo}>
             <h3 className={styles.title}>{t('contact_title')}</h3>
             <p>{t('contact_email')} paologrosso@gmail.com</p>
-         
           </div>
+
           <div className={styles.socialIcons}>
+            <a href="mailto:paologrosso@gmail.com" target="_blank" rel="noopener noreferrer">
+              <FontAwesomeIcon icon={faEnvelope} className={styles.icon} />
+            </a>
             <a href='https://www.youtube.com/user/PaoloGrosso' target='_blank' rel='noopener noreferrer'>
               <FontAwesomeIcon icon={faYoutube} className={styles.icon} />
             </a>

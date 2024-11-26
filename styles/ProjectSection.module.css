@@ -127,6 +127,7 @@
 
 .projectImage {
   transition: transform 0.3s ease;
+  object-fit: contain;
 }
 
 .projectImage:hover {
@@ -163,6 +164,7 @@
   position: relative;
   width: 100%;
   padding-top: 100%; /* 1:1 Aspect Ratio */
+  object-fit: contain !important;
 }
 
 .projectCard h3 {

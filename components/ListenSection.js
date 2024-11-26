@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import styles from '../styles/ListenSection.module.css';
+import styles2 from '../styles/ImageSeparator.module.css'; 
 
 const ListenSection = () => {
   const { t } = useTranslation();
@@ -90,7 +91,16 @@ const ListenSection = () => {
           )}
         </div>
       </div>
+      <div className={styles2.imageSeparator}>
+
+      <img 
+        src="/A-11.jpg" 
+        alt="Separador"
+        style={{ width: '100%', height: '100vh', objectFit: 'cover' }} // Prueba con estilos en línea para depuración
+      />
+    </div>
     </section>
+
   );
 };
 
