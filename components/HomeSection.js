@@ -31,14 +31,10 @@ const HomeSection = () => {
       className={`${styles.homeSection} ${isVisible ? styles.visible : ''}`}
     >
       <div className={styles.overlay}></div>
-      <div
-        className={`${styles.container} ${
-          isAnySectionExpanded ? styles.shifted : ''
-        }`}
-      >
+      <div className={styles.container}>
         <div
           className={`${styles.content} ${
-            isAnySectionExpanded ? styles.shiftUp : ''
+            isAnySectionExpanded ? styles.blurredText : ''
           } ${isVisible ? styles.fadeIn : ''}`}
         >
           <div className={styles.textContent}>
@@ -48,7 +44,7 @@ const HomeSection = () => {
         <div
           className={`${styles.expandableSections} ${
             isVisible ? styles.fadeInUp : ''
-          } ${isAnySectionExpanded ? styles.expanded : ''}`}
+          }`}
         >
           <ExpandableSection
             title={t('expandable_title_1')}

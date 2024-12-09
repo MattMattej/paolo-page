@@ -25,7 +25,7 @@ i18next
           'EN': 'EN',
 
            // HomeSection
-           'home_description': 'Music that transcend boundaries.',
+           'home_description': 'Music that transcend boundaries',
            'expandable_title_1': 'Unique Sound and Musical Signature',
            'expandable_content_1': 'My compositions always start from very particular and varied places, inspired by the My compositions always arise from very particular and varied places, inspired by the narrative and the world created in each project. By blending diverse elements, influences and musical genres, I manage to create a unique sound palette and musical signature for each particular project.',
            'expandable_title_2': 'Versatile Composer',
@@ -160,7 +160,7 @@ i18next
           'EN': 'EN',
 
           // HomeSection
-          'home_description': 'Música que trasciende fronteras.',
+          'home_description': 'Música que trasciende fronteras',
           'expandable_title_1': 'Sonido único y sello musical',
           'expandable_content_1': 'Mis composiciones siempre surgen de lugares muy particulares y variados, inspiradas por la narrativa y el mundo creado en cada proyecto. Al mezclar diversos elementos, influencias y corrientes musicales, logro crear una paleta sonora y una firma musical totalmente únicas para cada proyecto en particular.',
           'expandable_title_2': 'Compositor Versátil',

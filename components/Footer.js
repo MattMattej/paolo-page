@@ -14,11 +14,11 @@ const Footer = () => {
         <div className={styles.container}>
           <div className={styles.contactInfo}>
             <h3 className={styles.title}>{t('contact_title')}</h3>
-            <p>{t('contact_email')} paologrosso@gmail.com</p>
+            <p> paologrosso.composer@gmail.com</p>
           </div>
 
           <div className={styles.socialIcons}>
-            <a href="mailto:paologrosso@gmail.com" target="_blank" rel="noopener noreferrer">
+            <a href="mailto:paologrosso.composer@gmail.com" target="_blank" rel="noopener noreferrer">
               <FontAwesomeIcon icon={faEnvelope} className={styles.icon} />
             </a>
             <a href='https://www.youtube.com/user/PaoloGrosso' target='_blank' rel='noopener noreferrer'>

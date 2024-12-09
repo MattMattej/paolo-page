@@ -39,7 +39,7 @@ const BioSection = () => {
                 src="/A-24.jpg" 
                 alt="Paolo Grosso" 
                 width={540} 
-                height={780} 
+                height={730} 
                 objectFit="contain" 
                 className={styles.image}
               />

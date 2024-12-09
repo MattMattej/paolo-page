@@ -1,20 +1,21 @@
+/* HomeSection.module.css */
+
 .homeSection {
-  min-height: 100vh; /* Toda la altura de la pantalla */
+  min-height: 100vh;
   display: flex;
-  flex-direction: column; /* Alineación en columna */
+  flex-direction: column;
   position: relative;
   background-color: black;
-  background-image: url('/A-25.jpg'); /* Imagen de fondo */
-  background-size:contain;
+  background-image: url('/A-25.jpg');
+  background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
-  background-attachment:fixed;
+  background-position: top;
+  background-attachment: fixed;
   color: white;
   opacity: 0;
   transition: opacity 1s ease-in-out;
-  padding-top: 80px; /* Espacio para el navbar */
+  padding-top: 80px;
   z-index: 0;
-
 }
 
 .homeSection.visible {
@@ -27,8 +28,8 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* Oscurece el fondo */
-  z-index: -1; /* Asegura que no interfiera con el contenido */
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
 }
 
 .container {
@@ -39,22 +40,28 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex: 1; /* Ocupa el espacio disponible */
+  flex: 1;
 }
 
 .content {
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Centra el texto verticalmente */
-  align-items: center;
-  text-align: center;
-  flex: 1; /* Asegura que este bloque ocupe el espacio central */
+  justify-content: flex-end;
+  align-items: flex-start;
+  text-align: left;
+  flex: 1;
   opacity: 0;
   transition: opacity 1s ease-in-out 0.5s;
+  padding: 0 40px 80px; /* Ajusta posición por encima de los botones */
 }
 
 .content.fadeIn {
   opacity: 1;
+}
+
+.content.blurredText {
+  filter: blur(5px);
+  transition: filter 0.5s ease;
 }
 
 .textContent {
@@ -63,12 +70,16 @@
   line-height: 1.6;
 }
 
+.description {
+  margin: 0;
+}
+
 .expandableSections {
   display: grid;
   gap: 20px;
   width: 100%;
   max-width: 1200px;
-  margin-top: auto; /* Mueve este bloque hacia la parte inferior */
+  margin-top: auto;
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 1s ease-in-out 1s, transform 1s ease-in-out 1s;
@@ -79,34 +90,14 @@
   transform: translateY(0);
 }
 
-.expandableSection {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 10px;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden; /* Para evitar que el contenido expandido se desborde */
-  transition: transform 0.5s ease, max-height 0.5s ease;
-  transform-origin: top; /* Hace que el movimiento venga desde arriba */
-}
-
-.expandableSection.expanded {
-  transform: translateY(-100%); /* Mueve hacia arriba al expandirse */
-  max-height: 400px; /* Define la altura máxima expandida */
-}
-
-.expandableSection.collapsed {
-  max-height: 50px; /* Altura cuando está colapsada */
-}
-
 @media (min-width: 769px) {
   .expandableSections {
-    grid-template-columns: repeat(3, 1fr); /* Tres columnas en pantallas grandes */
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media (max-width: 768px) {
   .expandableSections {
-    grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+    grid-template-columns: 1fr;
   }
 }
