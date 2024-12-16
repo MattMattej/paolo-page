@@ -83,7 +83,7 @@
 
 .selectedProjectDescription {
   color: white;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   line-height: 1.8;
   text-align: left;
   width: 100%;
@@ -93,7 +93,7 @@
 
 .projectLinks {
   display: flex;
-  gap: 15px;
+  gap: 8px;
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
