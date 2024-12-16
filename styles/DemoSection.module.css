@@ -98,10 +98,11 @@
 }
 
 .expandedAudioPlayerWrapper {
-  width: 100%; /* Ajusta el ancho al contenedor */
+  width: 100%; /* Se ajusta al contenedor */
   display: flex;
   justify-content: center;
-  background-color: #000; /* Fondo negro */
+  align-items: center;
+  background-color: black; /* Fondo negro */
   margin-bottom: 15px;
 }
 
@@ -115,18 +116,18 @@
 }
 
 .audioPlayer {
-  width: 100%; /* Ajusta al ancho del contenedor */
-  max-width: 80%; /* Opcional: límite para pantallas grandes */
-  height: 70px;
+  width: 100%; /* Ahora ocupa el 100% del contenedor */
+  max-width: 100%; /* Sin restricciones adicionales */
+  height: 50px; /* Altura del reproductor */
 }
 
 .audioPlayer > div {
-  background-color: #000 !important; /* Fondo negro para consistencia */
+  background-color: black !important; /* Fondo negro consistente */
 }
 
 .audioPlayer audio {
-  filter: invert(1); /* Barra en blanco */
-  width: 100%;
+  width: 100%; /* Se asegura de que el control ocupe todo el ancho */
+  filter: invert(1); /* Invierte los colores para que los controles sean blancos */
 }
 
 .videoContainer, .imageContainer {

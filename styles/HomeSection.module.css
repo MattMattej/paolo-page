@@ -1,5 +1,3 @@
-/* HomeSection.module.css */
-
 .homeSection {
   min-height: 100vh;
   display: flex;
@@ -72,6 +70,10 @@
 
 .description {
   margin: 0;
+  position: relative; /* Para ajustar la posición */
+  top: -3px; /* Elevar 3px */
+  text-align: left; /* Alinear a la izquierda */
+  margin-left: -20px; /* Mover más hacia la izquierda */
 }
 
 .expandableSections {
