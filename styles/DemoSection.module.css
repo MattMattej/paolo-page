@@ -23,15 +23,15 @@
 }
 
 .demoCard {
-  background-color: white;
+  background-color: black; /* Fondo negro */
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Sombra ajustada */
   overflow: hidden;
   display: flex;
   flex-direction: column;
   height: 100%;
-  margin-top: 20px; /* Margen superior igual al de abajo */
-  margin-bottom: 20px; /* Margen inferior de las tarjetas */
+  margin-top: 20px; /* Margen superior */
+  margin-bottom: 20px; /* Margen inferior */
   transition: all 0.3s ease;
 }
 
@@ -57,7 +57,7 @@
 }
 
 .expandedModalContent {
-  background-color: white;
+  background-color: black; /* Fondo negro del modal */
   width: 80%;
   max-width: 1000px;
   height: 80%;
@@ -67,7 +67,7 @@
   flex-direction: column;
   overflow: hidden;
   position: relative;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
 .expandedVideoContainer {
@@ -94,14 +94,39 @@
 .expandedDemoTitle {
   margin-top: 15px;
   font-size: 1.5rem;
-  color: black;
+  color: white; /* Título en blanco */
 }
 
 .expandedAudioPlayerWrapper {
-  width: 100%;
+  width: 100%; /* Ajusta el ancho al contenedor */
   display: flex;
   justify-content: center;
+  background-color: #000; /* Fondo negro */
   margin-bottom: 15px;
+}
+
+.audioPlayerWrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000; /* Fondo negro */
+  height: 70px;
+}
+
+.audioPlayer {
+  width: 100%; /* Ajusta al ancho del contenedor */
+  max-width: 80%; /* Opcional: límite para pantallas grandes */
+  height: 70px;
+}
+
+.audioPlayer > div {
+  background-color: #000 !important; /* Fondo negro para consistencia */
+}
+
+.audioPlayer audio {
+  filter: invert(1); /* Barra en blanco */
+  width: 100%;
 }
 
 .videoContainer, .imageContainer {
@@ -141,29 +166,6 @@
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-.audioPlayerWrapper {
-  padding: 10px;
-  background-color: #f0f0f0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 70px;
-}
-
-.audioPlayer {
-  width: 100%;
-  max-width: 300px;
-}
-
-.audioPlayer > div {
-  background-color: #000 !important;
-}
-
-.audioPlayer audio {
-  filter: invert(1);
-  width: 100%;
-}
-
 .demoContent {
   padding: 15px;
   flex-grow: 1;
@@ -175,7 +177,7 @@
 .demoTitle {
   font-size: 1.2rem;
   margin: 0;
-  color: black;
+  color: white; /* Texto en blanco */
   text-align: center;
 }
 
