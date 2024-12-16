@@ -361,7 +361,7 @@ const ProjectsSection = () => {
   "id": 31,
   "title": t('HECHOS_CONSUMADOS'),
   "description": t('HECHOS_CONSUMADOS_DESCRIPTION'),
-  "image": "/projects/hechos_consumados.jpg",
+  "image": "/projects/hechos_consumados.png",
   "categories": ["TEATRO"],
   "links": [
     { "url": "https://www.youtube.com/watch?v=Ds8gjocEOjs", "text": t('Entrevista promocional') }
@@ -371,7 +371,7 @@ const ProjectsSection = () => {
   "id": 32,
   "title": t('ELIXIR'),
   "description": t('ELIXIR_DESCRIPTION'),
-  "image": "/projects/elixir.jpg",
+  "image": "/projects/elixir.png",
   "categories": ["TEATRO", "ALBUM"],
   "links": [
     { "url": "https://animalismoteatro.com", "text": t('Web de Animalismo Teatro') }
@@ -381,7 +381,7 @@ const ProjectsSection = () => {
   "id": 33,
   "title": t('EL_Ala_QUEBRADIZA_DE_LA_MARIPOSA'),
   "description": t('EL_Ala_QUEBRADIZA_DE_LA_MARIPOSA_DESCRIPTION'),
-  "image": "/projects/el_ala_quebradiza.jpg",
+  "image": "/projects/quebradiza.png",
   "categories": ["TEATRO"],
   "links": [
     { "url": "https://www.youtube.com/watch?v=9yRjKU2Z7fU", "text": t('Entrevista al director') },
@@ -418,7 +418,7 @@ const ProjectsSection = () => {
   "id": 36,
   "title": t('LO_CONTRARIO'),
   "description": t('LO_CONTRARIO_DESCRIPTION'),
-  "image": "/projects/lo_contrario.jpg",
+  "image": "/projects/contrario.png",
   "categories": ["TEATRO", "AUDIO"],
   "links": [
     { "url": "https://970universal.com/2018/04/17/sebastian-calderon-presento-lo-contrario-obra-que-estrena-el-25-de-abril/", "text": t('Entrevista al director') }
@@ -428,7 +428,7 @@ const ProjectsSection = () => {
   "id": 37,
   "title": t('NO_SE_ELIGE_SER_UN_HEROE'),
   "description": t('NO_SE_ELIGE_SER_UN_HEROE_DESCRIPTION'),
-  "image": "/projects/no_se_elige_ser_un_heroe.jpg",
+  "image": "/projects/heroe.png",
   "categories": ["TEATRO"],
   "links": [
     { "url": "https://www.youtube.com/watch?v=b8OGOGo-6mU", "text": t('Entrevista al director') },
@@ -440,46 +440,46 @@ const ProjectsSection = () => {
   "id": 38,
   "title": t('LOS_COMENSALES'),
   "description": t('LOS_COMENSALES_DESCRIPTION'),
-  "image": "/projects/los_comensales.jpg",
+  "image": "/projects/comensales.jpg",
   "categories": ["TEATRO", "AUDIO"],
   "links": [
     { "url": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?12406", "text": t('Cartelera') }
   ]
 },
 {
-  id: 39,
-  title: t("1989_ENSAMBLE_JAZZ_GITANO_TITLE"),
-  description: t("1989_ENSAMBLE_JAZZ_GITANO_DESCRIPTION"),
-  image: "/projects/1989_ensamble_jazz_gitano.jpg",
-  categories: ["AUDIO"],
-  links: [
-    { url: "https://www.youtube.com/watch?v=IR8To0qugXs", text: t("WATCH_ON_YOUTUBE") }
+  "id": 39,
+  "title": t("1989_ENSAMBLE_JAZZ_GITANO_TITLE"),
+  "description": t("1989_ENSAMBLE_JAZZ_GITANO_DESCRIPTION"),
+  "image": "/projects/gitano.png",
+  "categories": ["AUDIO"],
+  "links": [
+    { "url": "https://www.youtube.com/watch?v=IR8To0qugXs", "text": t("WATCH_ON_YOUTUBE") }
   ]
 },
 {
-  id: 40,
-  title: t("TIME_INTERLUDIO_ECLIPSE_TITLE"),
-  description: t("TIME_INTERLUDIO_ECLIPSE_DESCRIPTION"),
-  image: "/projects/time_eclipse.jpg",
-  categories: ["MUSICA"],
-  links: [
-    { url: "https://fabianalmadarey.com/", text: t("ARTIST_PAGE") }
+ "id": 40,
+  "title": t("TIME_INTERLUDIO_ECLIPSE_TITLE"),
+  "description": t("TIME_INTERLUDIO_ECLIPSE_DESCRIPTION"),
+  "image": "/projects/clipse.png",
+  "categories": ["MUSICA"],
+  "links": [
+    { "url": "https://fabianalmadarey.com/", "text": t("ARTIST_PAGE") }
   ]
 },
 {
-  id: 41,
-  title: t("ARREGLO_GUITARRON_TITLE"),
-  description: t("ARREGLO_GUITARRON_DESCRIPTION"),
-  image: "/projects/guitarron.jpg",
-  categories: ["MUSICA", "ARREGLOS"]
+  "id": 41,
+  "title": t("ARREGLO_GUITARRON_TITLE"),
+  "description": t("ARREGLO_GUITARRON_DESCRIPTION"),
+  "image": "/projects/guitarron.png",
+  "categories": ["MUSICA", "ARREGLOS"]
 },
 {
-  id: 42,
-  title: t("LA_MANUSH_TITLE"),
-  description: t("LA_MANUSH_DESCRIPTION"),
-  image: "/projects/la_manush.jpg",
-  categories: ["MUSICA", "INTÉRPRETE MUSICAL", "ALBUM"],
-  links: [
+  "id": 42,
+  "title": t("LA_MANUSH_TITLE"),
+  "description": t("LA_MANUSH_DESCRIPTION"),
+  "image": "/projects/la_manush.jpg",
+  "categories": ["MUSICA", "INTÉRPRETE MUSICAL", "ALBUM"],
+  "links": [
     { url: "#", text: t("LISTEN_TO_ALBUM") }
   ]
 },
