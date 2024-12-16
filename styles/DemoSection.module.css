@@ -58,7 +58,7 @@
 
 .expandedModalContent {
   background-color: black; /* Fondo negro del modal */
-  width: 80%;
+  width: 100%;
   max-width: 1000px;
   height: 80%;
   max-height: 700px;
