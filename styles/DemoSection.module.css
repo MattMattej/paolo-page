@@ -26,11 +26,9 @@
   background-color: black;
   border-radius: 8px;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.3s ease;
+  height: 200px; /* Altura ajustada */
   cursor: pointer;
-  height: 250px; /* Altura fija para todas las demos */
+  transition: transform 0.3s ease;
 }
 
 .demoCard:hover {
@@ -40,10 +38,10 @@
 .imageContainer {
   position: relative;
   width: 100%;
-  height: 60%; /* Ajusta la altura proporcionalmente */
+  height: 70%; /* Proporción ajustada */
 }
 
-.imageContainer img, .imageContainer video {
+.imageContainer img, .imageContainer div {
   position: absolute;
   top: 0;
   left: 0;
@@ -52,18 +50,10 @@
   object-fit: cover;
 }
 
-.audioPlayerWrapper {
-  width: 100%;
-  margin-top: 10px; /* Espacio entre imagen y reproductor */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .demoTitle {
   text-align: center;
   color: white;
-  margin-top: 10px; /* Espacio entre reproductor y título */
+  margin-top: 10px;
   font-size: 1rem;
 }
 
@@ -82,44 +72,33 @@
 
 .expandedModalContent {
   background-color: black;
-  width: 100%;
+  width: 90%;
   max-width: 1000px;
-  height: 80%;
+  height: 100%;
   border-radius: 15px;
-  padding: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .expandedImageContainer {
   width: 100%;
-  height: 50%; /* La mitad del modal */
+  height: 80%; /* Ocupa el 80% de la altura */
   position: relative;
 }
 
-.expandedImageContainer img, .expandedImageContainer video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
 .expandedAudioPlayerWrapper {
+  margin-top: 20px;
   width: 100%;
-  height: 50px; /* Mismo tamaño que la imagen */
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
 }
 
 .expandedDemoTitle {
   text-align: center;
   color: white;
-  margin-top: 20px; /* Espacio después del reproductor */
+  margin-top: 20px;
   font-size: 1.5rem;
 }
 
@@ -130,31 +109,12 @@
   background-color: rgba(255, 255, 255, 0.3);
   color: white;
   border: none;
+  border-radius: 50%;
   width: 40px;
   height: 40px;
-  border-radius: 50%;
   cursor: pointer;
 }
 
 .closeButton:hover {
   background-color: rgba(255, 255, 255, 0.5);
-}
-
-/* Media Queries */
-@media (max-width: 1200px) {
-  .demoGrid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .demoGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 480px) {
-  .demoGrid {
-    grid-template-columns: 1fr;
-  }
 }

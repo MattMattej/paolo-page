@@ -67,14 +67,13 @@ const DemosSection = () => {
               className={styles.demoCard}
               onClick={() => toggleDemoExpand(demo.id)}
             >
-              {/* Imagen o miniatura */}
               <div className={styles.imageContainer}>
                 {demo.type === 'video' ? (
                   <ReactPlayer
                     url={demo.src}
                     width="100%"
                     height="100%"
-                    light={true} /* Activa miniatura del video */
+                    light={true} /* Activa miniatura */
                     playIcon={null}
                     controls={false}
                   />
@@ -87,14 +86,12 @@ const DemosSection = () => {
                   />
                 )}
               </div>
-
-              {/* Título */}
               <h3 className={styles.demoTitle}>{demo.title}</h3>
             </div>
           ))}
         </div>
 
-        {/* Modal Expandido */}
+        {/* Modal */}
         {expandedDemo !== null && (
           <div className={styles.expandedOverlay}>
             <div className={styles.expandedModalContent}>
@@ -108,7 +105,6 @@ const DemosSection = () => {
                 if (demo.id === expandedDemo) {
                   return (
                     <div key={demo.id} className={styles.expandedContent}>
-                      {/* Imagen o video */}
                       <div className={styles.expandedImageContainer}>
                         {demo.type === 'video' ? (
                           <ReactPlayer
@@ -127,8 +123,6 @@ const DemosSection = () => {
                           />
                         )}
                       </div>
-
-                      {/* Reproductor de audio */}
                       {demo.type === 'audio' && (
                         <div className={styles.expandedAudioPlayerWrapper}>
                           <ReactPlayer
@@ -142,8 +136,6 @@ const DemosSection = () => {
                           />
                         </div>
                       )}
-
-                      {/* Título */}
                       <h3 className={styles.expandedDemoTitle}>{demo.title}</h3>
                     </div>
                   );
