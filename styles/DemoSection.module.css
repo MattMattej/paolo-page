@@ -69,8 +69,6 @@
 .expandedModalContent {
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Espacia los elementos */
-  align-items: center;
   width: 90%;
   height: 90%;
   background-color: black;
@@ -81,7 +79,7 @@
 
 .expandedImageContainer {
   width: 100%;
-  height: 75%; /* La imagen/video ocupa el 75% */
+  height: 75%; /* La imagen ocupa el 75% */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -91,16 +89,16 @@
 .expandedImageContainer div {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* Muestra la imagen/video completo sin recortar */
+  object-fit: contain; /* Evita el recorte de la imagen */
 }
 
 .expandedAudioPlayerWrapper {
-  width: 100%;
-  height: 50px; /* Tamaño fijo del reproductor */
+  width: 100%; /* El reproductor ocupa todo el ancho */
+  height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 10px; /* Espacio debajo de la imagen */
+  margin-top: 0; /* Elimina márgenes innecesarios */
 }
 
 .expandedDemoTitle {
