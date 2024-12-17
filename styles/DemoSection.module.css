@@ -1,67 +1,39 @@
-.demosSection {
-  padding: 80px 0;
-  background-color: #000000;
-}
-
-.container {
-  max-width: 1500px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.title {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 40px;
-  color: white;
-}
-
-.demoGrid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 20px;
-}
-
 .demoCard {
   background-color: black;
   border-radius: 8px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  gap: 15px; /* Espacio uniforme */
+  padding-bottom: 20px;
 }
 
 .imageContainer {
   position: relative;
   padding-top: 56.25%; /* 16:9 Aspect Ratio */
   width: 100%;
-  cursor: pointer;
 }
 
-.imageContainer img {
-  position: absolute;
-  top: 0;
-  left: 0;
+.audioPlayerWrapper {
   width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-.audioPlayerWrapper, .expandedAudioPlayerWrapper {
-  width: 100%;
+  margin-top: 15px; /* Espacio entre imagen y reproductor */
   display: flex;
-  align-items: center;
   justify-content: center;
-  background-color: black;
-  margin-top: 20px; /* Margen superior estilizado */
+  align-items: center;
 }
 
-.audioPlayerWrapper > div, .expandedAudioPlayerWrapper > div {
-  background-color: black !important;
+.expandedAudioPlayerWrapper {
+  margin-top: 15px; /* Espacio en el modal */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.audioPlayerWrapper audio, .expandedAudioPlayerWrapper audio {
-  width: 100%;
-  filter: invert(1); /* Controles blancos */
+.demoTitle, .expandedDemoTitle {
+  margin-top: 15px; /* Espacio entre reproductor y título */
+  text-align: center;
+  color: white;
+  font-size: 1.2rem;
 }
 
 .expandedOverlay {
@@ -86,11 +58,9 @@
   overflow: hidden;
 }
 
-.expandedDemoTitle {
-  margin-top: 30px;
-  font-size: 1.5rem;
-  color: white;
-  text-align: center;
+.expandedImageContainer, .expandedVideoContainer {
+  width: 100%;
+  height: 70%;
 }
 
 .closeButton {
@@ -100,9 +70,9 @@
   background-color: rgba(0, 0, 0, 0.6);
   color: white;
   border: none;
-  border-radius: 50%;
   width: 40px;
   height: 40px;
+  border-radius: 50%;
   cursor: pointer;
 }
 

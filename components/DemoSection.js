@@ -82,7 +82,6 @@ const DemosSection = () => {
                     height="100%"
                     controls={true}
                     playing={true}
-                    onEnded={() => setExpandedDemo(null)}
                   />
                 </div>
               ) : (
@@ -96,8 +95,9 @@ const DemosSection = () => {
                 </div>
               )}
 
+              {/* Espacio entre imagen/video y el reproductor */}
               {demo.type === 'audio' && (
-                <div className={styles.expandedAudioPlayerWrapper}>
+                <div className={styles.audioPlayerWrapper}>
                   <ReactPlayer
                     url={demo.src}
                     width="100%"
@@ -106,19 +106,25 @@ const DemosSection = () => {
                     playing={playingAudio === demo.id}
                     onPlay={() => setPlayingAudio(demo.id)}
                     onPause={() => setPlayingAudio(null)}
-                    config={{
-                      file: {
-                        forceAudio: true,
-                        attributes: { style: { outline: 'none' } },
-                      },
-                    }}
                   />
                 </div>
               )}
+
+              {/* Título con espacio */}
               <h3 className={styles.expandedDemoTitle}>{demo.title}</h3>
             </div>
           </div>
         )}
+
+        {/* Imagen y reproductor en la demo común */}
+        <div className={styles.imageContainer}>
+          <Image
+            src={demo.image}
+            alt={demo.title}
+            layout="fill"
+            objectFit="contain"
+          />
+        </div>
 
         {demo.type === 'audio' && (
           <div className={styles.audioPlayerWrapper}>
@@ -130,31 +136,11 @@ const DemosSection = () => {
               playing={playingAudio === demo.id}
               onPlay={() => setPlayingAudio(demo.id)}
               onPause={() => setPlayingAudio(null)}
-              config={{
-                file: {
-                  forceAudio: true,
-                  attributes: { style: { outline: 'none' } },
-                },
-              }}
             />
           </div>
         )}
 
-        <div
-          className={styles.imageContainer}
-          onClick={() => toggleDemoExpand(demo.id)}
-        >
-          <Image
-            src={demo.image}
-            alt={demo.title}
-            layout="fill"
-            objectFit="contain"
-          />
-        </div>
-
-        <div className={styles.demoContent}>
-          <h3 className={styles.demoTitle}>{demo.title}</h3>
-        </div>
+        <h3 className={styles.demoTitle}>{demo.title}</h3>
       </div>
     );
   };
