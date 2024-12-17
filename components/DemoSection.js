@@ -48,13 +48,11 @@ const DemosSection = () => {
 
   const toggleDemoExpand = (id) => {
     if (expandedDemo === id) {
-      // Si el modal ya está abierto, cerramos el modal
       setExpandedDemo(null);
       setPlayingAudio(null);
     } else {
-      // Si el modal está cerrado, lo abrimos con el video correspondiente
       setExpandedDemo(id);
-      setPlayingAudio(null); // Reseteamos el audio
+      setPlayingAudio(null);
     }
   };
 
@@ -84,7 +82,7 @@ const DemosSection = () => {
                     height="100%"
                     controls={true}
                     playing={true}
-                    onEnded={() => setExpandedDemo(null)} // Cierra el modal cuando termina el video
+                    onEnded={() => setExpandedDemo(null)}
                   />
                 </div>
               ) : (
@@ -98,60 +96,29 @@ const DemosSection = () => {
                 </div>
               )}
 
-              <div className={styles.expandedDemoContent}>
-                {demo.type === 'audio' && (
-                  <div className={styles.expandedAudioPlayerWrapper}>
-                    <ReactPlayer
-                      url={demo.src}
-                      width="80%"
-                      height="70px"
-                      controls={true}
-                      playing={playingAudio === demo.id}
-                      onPlay={() => setPlayingAudio(demo.id)}
-                      onPause={() => setPlayingAudio(null)}
-                      config={{
-                        file: {
-                          forceAudio: true,
-                          attributes: {
-                            style: { outline: 'none' },
-                          },
+              {demo.type === 'audio' && (
+                <div className={styles.audioPlayerWrapper}>
+                  <ReactPlayer
+                    url={demo.src}
+                    width="100%"
+                    height="50px"
+                    controls={true}
+                    playing={playingAudio === demo.id}
+                    onPlay={() => setPlayingAudio(demo.id)}
+                    onPause={() => setPlayingAudio(null)}
+                    config={{
+                      file: {
+                        forceAudio: true,
+                        attributes: {
+                          style: { outline: 'none' },
                         },
-                      }}
-                    />
-                  </div>
-                )}
-                <h3 className={styles.expandedDemoTitle}>{demo.title}</h3>
-              </div>
+                      },
+                    }}
+                  />
+                </div>
+              )}
+              <h3 className={styles.expandedDemoTitle}>{demo.title}</h3>
             </div>
-          </div>
-        )}
-
-        {/* Video o miniatura */}
-        {demo.type === 'video' ? (
-          <div
-            className={styles.videoContainer}
-            onClick={() => toggleDemoExpand(demo.id)}
-          >
-            <ReactPlayer
-              url={demo.src}
-              width="100%"
-              height="100%"
-              light={true} // La miniatura del video se muestra
-              playIcon={null} // Elimina el ícono de play de la miniatura
-              playing={false} // No lo reproduce automáticamente
-            />
-          </div>
-        ) : (
-          <div
-            className={styles.imageContainer}
-            onClick={() => toggleDemoExpand(demo.id)}
-          >
-            <Image
-              src={demo.image}
-              alt={demo.title}
-              layout="fill"
-              objectFit="contain"
-            />
           </div>
         )}
 
@@ -189,9 +156,7 @@ const DemosSection = () => {
     <section id="demos" className={styles.demosSection}>
       <div className={styles.container}>
         <h2 className={styles.title}>{t('Demos')}</h2>
-        <div className={styles.demoGrid}>
-          {demos.map(renderDemoContent)}
-        </div>
+        <div className={styles.demoGrid}>{demos.map(renderDemoContent)}</div>
       </div>
     </section>
   );
