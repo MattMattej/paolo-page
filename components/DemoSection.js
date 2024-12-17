@@ -135,6 +135,7 @@ const DemosSection = () => {
                           />
                         )}
                       </div>
+                      <h3 className={styles.expandedDemoTitle}>{demo.title}</h3>
                       <div className={styles.expandedAudioPlayerWrapper}>
                         {demo.type === 'audio' && (
                           <ReactPlayer
@@ -145,7 +146,6 @@ const DemosSection = () => {
                           />
                         )}
                       </div>
-                      <h3 className={styles.expandedDemoTitle}>{demo.title}</h3>
                     </div>
                   );
                 }

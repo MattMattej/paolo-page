@@ -18,7 +18,7 @@
 
 .demoGrid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr); /* 5 columnas */
+  grid-template-columns: repeat(5, 1fr);
   gap: 10px;
 }
 
@@ -74,39 +74,6 @@
   background-color: black;
   border-radius: 8px;
   position: relative;
-  overflow: hidden;
-}
-
-.expandedImageContainer {
-  width: 100%;
-  height: 75%; /* La imagen ocupa el 75% */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.expandedImageContainer img,
-.expandedImageContainer div {
-  width: 100%;
-  height: 100%;
-  object-fit: contain; /* Evita el recorte de la imagen */
-}
-
-.expandedAudioPlayerWrapper {
-  width: 100%; /* El reproductor ocupa todo el ancho */
-  height: 50px; /* Altura fija */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: auto; /* Empuja el reproductor hacia la base del modal */
-  background-color: black;
-}
-
-.expandedDemoTitle {
-  text-align: center;
-  color: white;
-  font-size: 1.5rem;
-  margin: 10px 0; /* Espacio entre el reproductor y el título */
 }
 
 .closeButton {
@@ -121,31 +88,35 @@
   height: 40px;
   font-size: 1.2rem;
   cursor: pointer;
+}
+
+.expandedImageContainer {
+  width: 100%;
+  flex: 1;
   display: flex;
-  align-items: center;
   justify-content: center;
-  z-index: 1100;
+  align-items: center;
 }
 
-.closeButton:hover {
-  background-color: rgba(255, 255, 255, 0.5);
+.expandedImageContainer img,
+.expandedImageContainer div {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
-/* Media Queries */
-@media (max-width: 1200px) {
-  .demoGrid {
-    grid-template-columns: repeat(3, 1fr);
-  }
+.expandedDemoTitle {
+  text-align: center;
+  color: white;
+  font-size: 1.5rem;
+  margin: 10px 0;
 }
 
-@media (max-width: 768px) {
-  .demoGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 480px) {
-  .demoGrid {
-    grid-template-columns: 1fr;
-  }
+.expandedAudioPlayerWrapper {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
 }
