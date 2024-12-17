@@ -7,7 +7,6 @@ import ReactPlayer from 'react-player';
 const DemosSection = () => {
   const { t } = useTranslation();
   const [expandedDemo, setExpandedDemo] = useState(null);
-  const [playingAudio, setPlayingAudio] = useState(null);
 
   const demos = [
     {
@@ -47,13 +46,7 @@ const DemosSection = () => {
   ];
 
   const toggleDemoExpand = (id) => {
-    if (expandedDemo === id) {
-      setExpandedDemo(null);
-      setPlayingAudio(null);
-    } else {
-      setExpandedDemo(id);
-      setPlayingAudio(null);
-    }
+    setExpandedDemo(expandedDemo === id ? null : id);
   };
 
   return (
@@ -69,88 +62,51 @@ const DemosSection = () => {
             >
               <div className={styles.imageContainer}>
                 {demo.type === 'video' ? (
-                  <ReactPlayer
-                    url={demo.src}
-                    width="100%"
-                    height="100%"
-                    light={true}
-                    controls={false}
-                  />
+                  <ReactPlayer url={demo.src} width="100%" height="100%" light controls={false} />
                 ) : (
-                  <Image
-                    src={demo.image}
-                    alt={demo.title}
-                    layout="fill"
-                    objectFit="cover"
-                  />
+                  <Image src={demo.image} alt={demo.title} layout="fill" objectFit="cover" />
                 )}
               </div>
-              {demo.type === 'audio' && (
-                <div className={styles.audioPlayerWrapper}>
-                  <ReactPlayer
-                    url={demo.src}
-                    width="100%"
-                    height="50px"
-                    controls={true}
-                    playing={playingAudio === demo.id}
-                    onPlay={() => setPlayingAudio(demo.id)}
-                    onPause={() => setPlayingAudio(null)}
-                  />
-                </div>
-              )}
               <h3 className={styles.demoTitle}>{demo.title}</h3>
             </div>
           ))}
         </div>
 
-        {/* Modal */}
         {expandedDemo !== null && (
           <div className={styles.expandedOverlay}>
             <div className={styles.expandedModalContent}>
-              <button
-                className={styles.closeButton}
-                onClick={() => toggleDemoExpand(null)}
-              >
+              <button className={styles.closeButton} onClick={() => toggleDemoExpand(null)}>
                 ✕
               </button>
-              {demos.map((demo) => {
-                if (demo.id === expandedDemo) {
-                  return (
-                    <div key={demo.id} className={styles.expandedContent}>
-                      <div className={styles.expandedImageContainer}>
-                        {demo.type === 'video' ? (
-                          <ReactPlayer
-                            url={demo.src}
-                            width="100%"
-                            height="100%"
-                            controls={true}
-                            playing={true}
-                          />
-                        ) : (
-                          <Image
-                            src={demo.image}
-                            alt={demo.title}
-                            layout="fill"
-                            objectFit="contain"
-                          />
-                        )}
-                      </div>
-                      <h3 className={styles.expandedDemoTitle}>{demo.title}</h3>
-                      <div className={styles.expandedAudioPlayerWrapper}>
-                        {demo.type === 'audio' && (
-                          <ReactPlayer
-                            url={demo.src}
-                            width="100%"
-                            height="50px"
-                            controls={true}
-                          />
-                        )}
-                      </div>
-                    </div>
-                  );
-                }
-                return null;
-              })}
+              <div className={styles.expandedImageContainer}>
+                {demos[expandedDemo - 1].type === 'video' ? (
+                  <ReactPlayer
+                    url={demos[expandedDemo - 1].src}
+                    width="100%"
+                    height="100%"
+                    controls
+                    playing
+                  />
+                ) : (
+                  <Image
+                    src={demos[expandedDemo - 1].image}
+                    alt={demos[expandedDemo - 1].title}
+                    layout="fill"
+                    objectFit="contain"
+                  />
+                )}
+              </div>
+              <h3 className={styles.expandedDemoTitle}>{demos[expandedDemo - 1].title}</h3>
+              <div className={styles.expandedAudioPlayerWrapper}>
+                {demos[expandedDemo - 1].type === 'audio' && (
+                  <ReactPlayer
+                    url={demos[expandedDemo - 1].src}
+                    width="100%"
+                    height="50px"
+                    controls
+                  />
+                )}
+              </div>
             </div>
           </div>
         )}
