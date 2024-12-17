@@ -91,6 +91,8 @@ const DemosSection = () => {
                     src={demo.image}
                     alt={demo.title}
                     layout="fill"
+                    width={300} /* Asegura un ancho */
+                    height={200} /* Ajusta un alto */
                     objectFit="contain"
                   />
                 </div>
