@@ -71,16 +71,16 @@
   height: 90%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center;
   background-color: black;
   border-radius: 8px;
   position: relative;
+  overflow: hidden;
 }
 
 .expandedImageContainer {
   width: 100%;
-  height: 80%; /* La imagen ocupa el 80% del modal */
+  height: 80%; /* La imagen ocupa el 80% */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -91,22 +91,23 @@
 .expandedImageContainer div {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* La imagen o video se ajusta sin recortarse */
+  object-fit: contain; /* Imagen/video completo sin recortes */
 }
 
 .expandedAudioPlayerWrapper {
-  width: 100%;
-  height: 50px; /* Tamaño del reproductor */
+  width: 100%; /* Ocupa todo el ancho */
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: black; /* Fondo negro para consistencia */
+  margin-top: -10px; /* Ajuste fino para eliminar espacios innecesarios */
 }
 
 .expandedDemoTitle {
   text-align: center;
   color: white;
+  margin-top: 5px; /* Espacio pequeño entre reproductor y título */
   font-size: 1.5rem;
-  margin-top: 10px;
 }
 
 .closeButton {
@@ -124,7 +125,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1100; /* Asegura que esté por encima de otros elementos */
+  z-index: 1100;
 }
 
 .closeButton:hover {
