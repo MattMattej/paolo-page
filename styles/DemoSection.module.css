@@ -69,7 +69,7 @@
 .expandedModalContent {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* Alinea el contenido de arriba hacia abajo */
+  justify-content: space-between; /* Espacia los elementos */
   align-items: center;
   width: 90%;
   height: 90%;
@@ -81,18 +81,17 @@
 
 .expandedImageContainer {
   width: 100%;
-  height: 75%; /* La imagen ocupa el 75% del modal */
+  height: 75%; /* La imagen/video ocupa el 75% */
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
 }
 
 .expandedImageContainer img,
 .expandedImageContainer div {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* Evita el recorte de la imagen */
+  object-fit: contain; /* Muestra la imagen/video completo sin recortar */
 }
 
 .expandedAudioPlayerWrapper {
@@ -101,15 +100,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: black;
-  margin-top: auto; /* Empuja el reproductor hacia la parte inferior */
+  margin-top: 10px; /* Espacio debajo de la imagen */
 }
 
 .expandedDemoTitle {
   text-align: center;
   color: white;
   font-size: 1.5rem;
-  margin: 10px 0; /* Espacio entre el reproductor y el título */
+  margin-top: 10px; /* Espacio entre el reproductor y el título */
 }
 
 .closeButton {

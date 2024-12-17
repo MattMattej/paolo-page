@@ -135,16 +135,16 @@ const DemosSection = () => {
                           />
                         )}
                       </div>
-                      {demo.type === 'audio' && (
-                        <div className={styles.expandedAudioPlayerWrapper}>
+                      <div className={styles.expandedAudioPlayerWrapper}>
+                        {demo.type === 'audio' && (
                           <ReactPlayer
                             url={demo.src}
                             width="100%"
                             height="50px"
                             controls={true}
                           />
-                        </div>
-                      )}
+                        )}
+                      </div>
                       <h3 className={styles.expandedDemoTitle}>{demo.title}</h3>
                     </div>
                   );
