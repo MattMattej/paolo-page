@@ -73,7 +73,7 @@ const DemosSection = () => {
                     url={demo.src}
                     width="100%"
                     height="100%"
-                    light={true} /* Activa miniatura */
+                    light={true}
                     playIcon={null}
                     controls={false}
                   />
@@ -119,7 +119,7 @@ const DemosSection = () => {
                             src={demo.image}
                             alt={demo.title}
                             layout="fill"
-                            objectFit="cover"
+                            objectFit="contain"
                           />
                         )}
                       </div>
