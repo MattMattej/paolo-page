@@ -74,7 +74,6 @@ const DemosSection = () => {
                     width="100%"
                     height="100%"
                     light={true}
-                    playIcon={null}
                     controls={false}
                   />
                 ) : (
@@ -86,6 +85,19 @@ const DemosSection = () => {
                   />
                 )}
               </div>
+              {demo.type === 'audio' && (
+                <div className={styles.audioPlayerWrapper}>
+                  <ReactPlayer
+                    url={demo.src}
+                    width="100%"
+                    height="50px"
+                    controls={true}
+                    playing={playingAudio === demo.id}
+                    onPlay={() => setPlayingAudio(demo.id)}
+                    onPause={() => setPlayingAudio(null)}
+                  />
+                </div>
+              )}
               <h3 className={styles.demoTitle}>{demo.title}</h3>
             </div>
           ))}
@@ -130,9 +142,6 @@ const DemosSection = () => {
                             width="100%"
                             height="50px"
                             controls={true}
-                            playing={playingAudio === demo.id}
-                            onPlay={() => setPlayingAudio(demo.id)}
-                            onPause={() => setPlayingAudio(null)}
                           />
                         </div>
                       )}
