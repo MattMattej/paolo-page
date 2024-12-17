@@ -64,9 +64,9 @@ const ProjectsSection = () => {
       "image": "/projects/una_luz.jpg",
       "categories": ["CINE", "ALBUM", "AUDIO"],
       "links": [
-       /* { "url": "https://www.youtube.com/watch?v=M_3NH3EIpvk", "text": t('Watch trailer') },
+       { "url": "https://www.youtube.com/watch?v=M_3NH3EIpvk", "text": t('Watch trailer') },
         { "url": "https://open.spotify.com/album/666uXCB1uLPb7sdZ3fnEaJ", "text": t('Listen on Spotify') },
-         { "url": "https://www.youtube.com/playlist?list=PLf9WXCV40h_Xm4Zs2KyKtajY4RuKXOBoP", "text": t('Listen on YouTube') },
+       /*  { "url": "https://www.youtube.com/playlist?list=PLf9WXCV40h_Xm4Zs2KyKtajY4RuKXOBoP", "text": t('Listen on YouTube') },
         { "url": "https://music.apple.com/hn/album/una-luz-afuera-original-motion-picture-soundtrack/1769240618", "text": t('Listen on Apple Music') },
        { "url": "https://www.imdb.com/title/tt27212583/", "text": t('See on IMDb') }*/
       ]
@@ -325,14 +325,14 @@ const ProjectsSection = () => {
   "description": t('SUEÑO_DE_LA_PROCESIÓN_DE_SUS_MUERTOS_DESCRIPTION'),
   "image": "/projects/procesion.png",
   "categories": ["TEATRO", "ALBUM"],
- /* "links": [
+  "links": [
     { "url": "https://open.spotify.com/intl-es/album/17U8tv4j59Z5HLLAQGVDLU?si=sRR4LNDsR8G7Fy-Szcw7yg", "text": t('Escuchar en Spotify') },
     { "url": "https://www.youtube.com/watch?v=W6Ydw-jp6cs&list=OLAK5uy_kLezU6Qz13JmbX_CBQ1aFSIBJcTRSfpjs", "text": t('Escuchar en YouTube') },
-    { "url": "https://music.apple.com/us/album/sue%C3%B1o-de-la-procesi%C3%B3n-de-sus-muertos-original/1635327193", "text": t('Escuchar en Apple Music') },
+   /* { "url": "https://music.apple.com/us/album/sue%C3%B1o-de-la-procesi%C3%B3n-de-sus-muertos-original/1635327193", "text": t('Escuchar en Apple Music') },
     { "url": "https://animalismoteatro.com", "text": t('Web de Animalismo Teatro') },
     { "url": "https://www.youtube.com/watch?v=4jBavauQwmg", "text": t('Entrevista en Uniradio') },
-    { "url": "https://semanariovoces.com/ritual-escenico-en-la-madriguera/", "text": t('Entrevista en Semanario Voces') }
-  ]*/
+    { "url": "https://semanariovoces.com/ritual-escenico-en-la-madriguera/", "text": t('Entrevista en Semanario Voces') }*/
+  ]
 },
 {
   "id": 29,
