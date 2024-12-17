@@ -91,15 +91,13 @@ const DemosSection = () => {
                     src={demo.image}
                     alt={demo.title}
                     layout="fill"
-                    width={300} /* Asegura un ancho */
-                    height={200} /* Ajusta un alto */
                     objectFit="contain"
                   />
                 </div>
               )}
 
               {demo.type === 'audio' && (
-                <div className={styles.audioPlayerWrapper}>
+                <div className={styles.expandedAudioPlayerWrapper}>
                   <ReactPlayer
                     url={demo.src}
                     width="100%"
@@ -111,9 +109,7 @@ const DemosSection = () => {
                     config={{
                       file: {
                         forceAudio: true,
-                        attributes: {
-                          style: { outline: 'none' },
-                        },
+                        attributes: { style: { outline: 'none' } },
                       },
                     }}
                   />
@@ -137,15 +133,24 @@ const DemosSection = () => {
               config={{
                 file: {
                   forceAudio: true,
-                  attributes: {
-                    style: { outline: 'none' },
-                  },
+                  attributes: { style: { outline: 'none' } },
                 },
               }}
-              className={styles.audioPlayer}
             />
           </div>
         )}
+
+        <div
+          className={styles.imageContainer}
+          onClick={() => toggleDemoExpand(demo.id)}
+        >
+          <Image
+            src={demo.image}
+            alt={demo.title}
+            layout="fill"
+            objectFit="contain"
+          />
+        </div>
 
         <div className={styles.demoContent}>
           <h3 className={styles.demoTitle}>{demo.title}</h3>
