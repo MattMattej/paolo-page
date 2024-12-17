@@ -1,16 +1,46 @@
+.demosSection {
+  padding: 80px 0;
+  background-color: black; /* Fondo de la sección */
+}
+
+.container {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: white;
+}
+
+.demoGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Cuadrícula de 4 columnas */
+  gap: 20px;
+}
+
 .demoCard {
   background-color: black;
   border-radius: 8px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  gap: 15px; /* Espacio uniforme */
+  gap: 15px; /* Espacio entre elementos */
   padding-bottom: 20px;
+  transition: transform 0.3s ease; /* Animación al hacer hover */
+  cursor: pointer;
+}
+
+.demoCard:hover {
+  transform: scale(1.03); /* Efecto de hover */
 }
 
 .imageContainer {
   position: relative;
-  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  padding-top: 56.25%; /* Aspect Ratio 16:9 */
   width: 100%;
 }
 
@@ -42,7 +72,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.8); /* Fondo semitransparente */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -56,11 +86,17 @@
   height: 80%;
   border-radius: 15px;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
 }
 
 .expandedImageContainer, .expandedVideoContainer {
   width: 100%;
   height: 70%;
+  position: relative;
 }
 
 .closeButton {
@@ -74,22 +110,30 @@
   height: 40px;
   border-radius: 50%;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+.closeButton:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Media Queries para versiones responsivas */
 @media (max-width: 1200px) {
   .demoGrid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas en pantallas medianas */
   }
 }
 
 @media (max-width: 768px) {
   .demoGrid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas pequeñas */
   }
 }
 
 @media (max-width: 480px) {
   .demoGrid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* 1 columna en móviles */
   }
 }

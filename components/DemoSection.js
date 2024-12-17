@@ -56,100 +56,94 @@ const DemosSection = () => {
     }
   };
 
-  const renderDemoContent = (demo) => {
-    const isExpanded = expandedDemo === demo.id;
-
-    return (
-      <div
-        key={demo.id}
-        className={`${styles.demoCard} ${isExpanded ? styles.expanded : ''}`}
-      >
-        {isExpanded && (
-          <div className={styles.expandedOverlay}>
-            <div className={styles.expandedModalContent}>
-              <button
-                className={styles.closeButton}
-                onClick={() => toggleDemoExpand(demo.id)}
-              >
-                ✕
-              </button>
-
-              {demo.type === 'video' ? (
-                <div className={styles.expandedVideoContainer}>
-                  <ReactPlayer
-                    url={demo.src}
-                    width="100%"
-                    height="100%"
-                    controls={true}
-                    playing={true}
-                  />
-                </div>
-              ) : (
-                <div className={styles.expandedImageContainer}>
-                  <Image
-                    src={demo.image}
-                    alt={demo.title}
-                    layout="fill"
-                    objectFit="contain"
-                  />
-                </div>
-              )}
-
-              {/* Espacio entre imagen/video y el reproductor */}
-              {demo.type === 'audio' && (
-                <div className={styles.audioPlayerWrapper}>
-                  <ReactPlayer
-                    url={demo.src}
-                    width="100%"
-                    height="50px"
-                    controls={true}
-                    playing={playingAudio === demo.id}
-                    onPlay={() => setPlayingAudio(demo.id)}
-                    onPause={() => setPlayingAudio(null)}
-                  />
-                </div>
-              )}
-
-              {/* Título con espacio */}
-              <h3 className={styles.expandedDemoTitle}>{demo.title}</h3>
-            </div>
-          </div>
-        )}
-
-        {/* Imagen y reproductor en la demo común */}
-        <div className={styles.imageContainer}>
-          <Image
-            src={demo.image}
-            alt={demo.title}
-            layout="fill"
-            objectFit="contain"
-          />
-        </div>
-
-        {demo.type === 'audio' && (
-          <div className={styles.audioPlayerWrapper}>
-            <ReactPlayer
-              url={demo.src}
-              width="100%"
-              height="50px"
-              controls={true}
-              playing={playingAudio === demo.id}
-              onPlay={() => setPlayingAudio(demo.id)}
-              onPause={() => setPlayingAudio(null)}
-            />
-          </div>
-        )}
-
-        <h3 className={styles.demoTitle}>{demo.title}</h3>
-      </div>
-    );
-  };
-
   return (
     <section id="demos" className={styles.demosSection}>
       <div className={styles.container}>
         <h2 className={styles.title}>{t('Demos')}</h2>
-        <div className={styles.demoGrid}>{demos.map(renderDemoContent)}</div>
+        <div className={styles.demoGrid}>
+          {demos.map((demo) => (
+            <div
+              key={demo.id}
+              className={styles.demoCard}
+              onClick={() => toggleDemoExpand(demo.id)}
+            >
+              <div className={styles.imageContainer}>
+                {demo.type === 'video' ? (
+                  <ReactPlayer
+                    url={demo.src}
+                    width="100%"
+                    height="100%"
+                    light={true}
+                    playIcon={null}
+                    controls={false}
+                  />
+                ) : (
+                  <Image
+                    src={demo.image}
+                    alt={demo.title}
+                    layout="fill"
+                    objectFit="cover"
+                  />
+                )}
+              </div>
+              <h3 className={styles.demoTitle}>{demo.title}</h3>
+            </div>
+          ))}
+        </div>
+
+        {/* Modal */}
+        {expandedDemo !== null && (
+          <div className={styles.expandedOverlay}>
+            <div className={styles.expandedModalContent}>
+              <button
+                className={styles.closeButton}
+                onClick={() => toggleDemoExpand(null)}
+              >
+                ✕
+              </button>
+              {demos.map((demo) => {
+                if (demo.id === expandedDemo) {
+                  return (
+                    <div key={demo.id} className={styles.expandedContent}>
+                      {demo.type === 'video' ? (
+                        <ReactPlayer
+                          url={demo.src}
+                          width="100%"
+                          height="100%"
+                          controls={true}
+                          playing={true}
+                        />
+                      ) : (
+                        <Image
+                          src={demo.image}
+                          alt={demo.title}
+                          layout="responsive"
+                          width={1000}
+                          height={500}
+                        />
+                      )}
+                      {demo.type === 'audio' && (
+                        <div className={styles.audioPlayerWrapper}>
+                          <ReactPlayer
+                            url={demo.src}
+                            width="100%"
+                            height="50px"
+                            controls={true}
+                            playing={playingAudio === demo.id}
+                            onPlay={() => setPlayingAudio(demo.id)}
+                            onPause={() => setPlayingAudio(null)}
+                          />
+                        </div>
+                      )}
+                      <h3 className={styles.expandedDemoTitle}>{demo.title}</h3>
+                    </div>
+                  );
+                }
+                return null;
+              })}
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
