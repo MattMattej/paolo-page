@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef,useMemo } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import Image from 'next/image';
 import styles from '../styles/ProjectSection.module.css';
@@ -17,14 +17,14 @@ import {
 
 const ProjectsSection = () => {
   const { t, i18n } = useTranslation();
-  const sectionRef = useRef(null); // Ref para el contenedor de la sección
+  const sectionRef = useRef(null);
   const selectedProjectRef = useRef(null);
   const [activeFilters, setActiveFilters] = useState(['ALL']);
   const [visibleProjects, setVisibleProjects] = useState(12);
   const [selectedProject, setSelectedProject] = useState(null);
 
   if (!i18n.isInitialized) {
-    return <div>Loading...</div>; // Evita renderizar mientras las traducciones no están listas
+    return <div>Loading...</div>;
   }
   const projects = useMemo(() => [
     {
@@ -480,124 +480,114 @@ const ProjectsSection = () => {
   "image": "/projects/la_manush.jpg",
   "categories": ["MUSICA", "INTÉRPRETE MUSICAL", "ALBUM"],
   "links": [
-    { url: "#", text: t("LISTEN_TO_ALBUM") }
+    { "url": "#", "text": t("LISTEN_TO_ALBUM") }
   ]
 },
-  ], [t]);
-
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (selectedProjectRef.current && !selectedProjectRef.current.contains(event.target)) {
-        setSelectedProject(null);
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
+].map(project => ({
+  ...project,
+  links: project.links?.filter(link => link.url && link.text) || [] // Filtra links inválidos
+})), [t]);
 
 useEffect(() => {
-  // Scroll al inicio de la sección cuando se selecciona un proyecto
+  const handleClickOutside = (event) => {
+    if (selectedProjectRef.current && !selectedProjectRef.current.contains(event.target)) {
+      setSelectedProject(null);
+    }
+  };
+
+  document.addEventListener('mousedown', handleClickOutside);
+  return () => document.removeEventListener('mousedown', handleClickOutside);
+}, []);
+
+useEffect(() => {
   if (selectedProject && sectionRef.current) {
     sectionRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 }, [selectedProject]);
 
-  const filters = [
-    { id: 'ALL', label: t('All') },
-    { id: 'CINE', label: t('Film') },
-    { id: 'VIDEOJUEGO', label: t('Videogame') },
-    { id: 'TEATRO', label: t('Theatre') },
-    { id: 'MUSICA', label: t('Music') },
-    { id: 'VARIOS', label: t('Various') },
-    { id: 'AUDIO', label: t('Audio') },
-  ];
+const filters = [
+  { id: 'ALL', label: t('All') },
+  { id: 'CINE', label: t('Film') },
+  { id: 'VIDEOJUEGO', label: t('Videogame') },
+  { id: 'TEATRO', label: t('Theatre') },
+  { id: 'MUSICA', label: t('Music') },
+  { id: 'VARIOS', label: t('Various') },
+  { id: 'AUDIO', label: t('Audio') },
+];
 
-  const toggleFilter = (filterId) => {
-    if (activeFilters[0] === filterId) {
-      setActiveFilters(['ALL']); // Vuelve a 'ALL' si se hace clic en el filtro activo
-    } else {
-      setActiveFilters([filterId]); // Establece el nuevo filtro como único activo
-    }
-  };
+const toggleFilter = (filterId) => {
+  setActiveFilters(activeFilters[0] === filterId ? ['ALL'] : [filterId]);
+};
 
-  const showMoreProjects = () => {
-    setVisibleProjects((prev) => Math.min(prev + 10, filteredProjects.length));
-  };
+const showMoreProjects = () => {
+  setVisibleProjects((prev) => Math.min(prev + 10, filteredProjects.length));
+};
 
-  const selectProject = (project) => {
-    setSelectedProject(selectedProject?.id === project.id ? null : project);
-  };
+const selectProject = (project) => {
+  setSelectedProject(selectedProject?.id === project.id ? null : project);
+};
 
-  // Función para formatear la descripción
-  const formatDescription = (description) => {
-    // Divide el texto en oraciones y las formatea
-    const sentences = description.split(/(?<=\.)(?:\s+)/);
-    return sentences.map((sentence, index) => (
-      <React.Fragment key={index}>
-        {sentence.trim()}
-        {index < sentences.length - 1 && <br />}<br />
-      </React.Fragment>
-    ));
-  };
+const formatDescription = (description) => {
+  const sentences = description.split(/(?<=\.)(?:\s+)/);
+  return sentences.map((sentence, index) => (
+    <React.Fragment key={index}>
+      {sentence.trim()}
+      {index < sentences.length - 1 && <br />}<br />
+    </React.Fragment>
+  ));
+};
 
-  const getLinkIcon = (url, text) => {
-    try {
-      const lowercaseUrl = url.toLowerCase();
-      const lowercaseText = text.toLowerCase();
-  
-      if (lowercaseUrl.includes('spotify')) return <Spotify className={styles.linkIcon} />;
-      if (lowercaseUrl.includes('youtube')) return <Youtube className={styles.linkIcon} />;
-      if (lowercaseUrl.includes('apple.com/music')) return <Apple className={styles.linkIcon} />;
-      if (lowercaseUrl.includes('imdb')) return <Video className={styles.linkIcon} />;
-      if (lowercaseText.includes('trailer')) return <Play className={styles.linkIcon} />;
-      if (lowercaseText.includes('info') || lowercaseText.includes('más')) return <Info className={styles.linkIcon} />;
-      if (lowercaseText.includes('ficha')) return <FileText className={styles.linkIcon} />;
-  
-      // Retorno por defecto
-      return <ExternalLink className={styles.linkIcon} />;
-    } catch (error) {
-      console.error('Error al determinar el ícono del enlace:', error);
-      return <ExternalLink className={styles.linkIcon} />;
-    }
-  };
+const getLinkIcon = (url, text) => {
+  const lowercaseUrl = url.toLowerCase();
+  const lowercaseText = text.toLowerCase();
 
-  const filteredProjects = projects.filter(project => 
-    activeFilters.includes('ALL') || project.categories.some(cat => activeFilters.includes(cat))
-  );
+  if (lowercaseUrl.includes('spotify')) return <Spotify className={styles.linkIcon} />;
+  if (lowercaseUrl.includes('youtube')) return <Youtube className={styles.linkIcon} />;
+  if (lowercaseUrl.includes('apple.com/music')) return <Apple className={styles.linkIcon} />;
+  if (lowercaseUrl.includes('imdb')) return <Video className={styles.linkIcon} />;
+  if (lowercaseText.includes('trailer')) return <Play className={styles.linkIcon} />;
+  if (lowercaseText.includes('info')) return <Info className={styles.linkIcon} />;
+  return <ExternalLink className={styles.linkIcon} />;
+};
 
-  return (
-    <section id="projects" className={styles.projectsSection} ref={sectionRef}>
-      <div className={styles.container}>
-        <h2 className={styles.title}>{t('Projects')}</h2>
-        <div className={styles.filters}>
-          {filters.map((filter) => (
-            <button
-              key={filter.id}
-              className={`${styles.filterButton} ${activeFilters.includes(filter.id) ? styles.active : ''}`}
-              onClick={() => toggleFilter(filter.id)}
-            >
-              {filter.label}
-            </button>
-          ))}
-        </div>
-        {selectedProject && (
-          <div className={styles.selectedProject} ref={selectedProjectRef}>
-            <div className={styles.selectedProjectImage}>
-              <Image
-                src={selectedProject.image}
-                alt={selectedProject.title}
-                layout="fill"
-                objectFit="contain"
-                className={styles.projectImage}
-              />
-            </div>
-            <h3 className={styles.selectedProjectTitle}>{selectedProject.title}</h3>
-            <div className={styles.selectedProjectDescription}>
-              {formatDescription(selectedProject.description)}
-            </div>
-            <div className={styles.projectLinks}>
-              {selectedProject.links?.map((link, index) => (
+const filteredProjects = projects.filter(project =>
+  activeFilters.includes('ALL') || project.categories.some(cat => activeFilters.includes(cat))
+);
+
+return (
+  <section id="projects" className={styles.projectsSection} ref={sectionRef}>
+    <div className={styles.container}>
+      <h2 className={styles.title}>{t('Projects')}</h2>
+      <div className={styles.filters}>
+        {filters.map((filter) => (
+          <button
+            key={filter.id}
+            className={`${styles.filterButton} ${activeFilters.includes(filter.id) ? styles.active : ''}`}
+            onClick={() => toggleFilter(filter.id)}
+          >
+            {filter.label}
+          </button>
+        ))}
+      </div>
+      {selectedProject && (
+        <div className={styles.selectedProject} ref={selectedProjectRef}>
+          <div className={styles.selectedProjectImage}>
+            <Image
+              src={selectedProject.image}
+              alt={selectedProject.title}
+              layout="fill"
+              objectFit="contain"
+              className={styles.projectImage}
+            />
+          </div>
+          <h3 className={styles.selectedProjectTitle}>{selectedProject.title}</h3>
+          <div className={styles.selectedProjectDescription}>
+            {formatDescription(selectedProject.description)}
+          </div>
+          <div className={styles.projectLinks}>
+            {selectedProject.links?.map((link, index) => {
+              if (!link?.url || !link?.text) return null;
+              return (
                 <a 
                   key={index} 
                   href={link.url} 
@@ -608,38 +598,39 @@ useEffect(() => {
                   {getLinkIcon(link.url, link.text)}
                   <span>{link.text}</span>
                 </a>
-              ))}
-            </div>
+              );
+            })}
           </div>
-        )}
-        <div className={styles.projectGrid}>
-          {filteredProjects.slice(0, visibleProjects).map((project) => (
-            <div
-              key={project.id}
-              className={`${styles.projectCard} ${selectedProject?.id === project.id ? styles.selected : ''}`}
-              onClick={() => selectProject(project)}
-            >
-              <div className={styles.projectImageContainer}>
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  layout="fill"
-                  objectFit="cover"
-                  priority
-                />
-              </div>
-              <h3>{project.title}</h3>
-            </div>
-          ))}
         </div>
-        {visibleProjects < filteredProjects.length && (
-          <button className={styles.loadMoreButton} onClick={showMoreProjects}>
-            {t('Load More')}
-          </button>
-        )}
+      )}
+      <div className={styles.projectGrid}>
+        {filteredProjects.slice(0, visibleProjects).map((project) => (
+          <div
+            key={project.id}
+            className={`${styles.projectCard} ${selectedProject?.id === project.id ? styles.selected : ''}`}
+            onClick={() => selectProject(project)}
+          >
+            <div className={styles.projectImageContainer}>
+              <Image
+                src={project.image}
+                alt={project.title}
+                layout="fill"
+                objectFit="cover"
+                priority
+              />
+            </div>
+            <h3>{project.title}</h3>
+          </div>
+        ))}
       </div>
-    </section>
-  );
+      {visibleProjects < filteredProjects.length && (
+        <button className={styles.loadMoreButton} onClick={showMoreProjects}>
+          {t('Load More')}
+        </button>
+      )}
+    </div>
+  </section>
+);
 };
 
 export default ProjectsSection;

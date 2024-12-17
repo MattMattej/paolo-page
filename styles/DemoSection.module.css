@@ -1,6 +1,6 @@
 .demosSection {
   padding: 80px 0;
-  background-color: black; /* Fondo de la sección */
+  background-color: black;
 }
 
 .container {
@@ -18,8 +18,8 @@
 
 .demoGrid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Cuadrícula de 4 columnas */
-  gap: 20px;
+  grid-template-columns: repeat(4, 1fr); /* 4 columnas */
+  gap: 15px;
 }
 
 .demoCard {
@@ -28,42 +28,43 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  gap: 15px; /* Espacio entre elementos */
-  padding-bottom: 20px;
-  transition: transform 0.3s ease; /* Animación al hacer hover */
+  transition: transform 0.3s ease;
   cursor: pointer;
+  height: 250px; /* Altura fija para todas las demos */
 }
 
 .demoCard:hover {
-  transform: scale(1.03); /* Efecto de hover */
+  transform: scale(1.03);
 }
 
 .imageContainer {
   position: relative;
-  padding-top: 56.25%; /* Aspect Ratio 16:9 */
   width: 100%;
+  height: 60%; /* Ajusta la altura proporcionalmente */
+}
+
+.imageContainer img, .imageContainer video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .audioPlayerWrapper {
   width: 100%;
-  margin-top: 15px; /* Espacio entre imagen y reproductor */
+  margin-top: 10px; /* Espacio entre imagen y reproductor */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.expandedAudioPlayerWrapper {
-  margin-top: 15px; /* Espacio en el modal */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.demoTitle, .expandedDemoTitle {
-  margin-top: 15px; /* Espacio entre reproductor y título */
+.demoTitle {
   text-align: center;
   color: white;
-  font-size: 1.2rem;
+  margin-top: 10px; /* Espacio entre reproductor y título */
+  font-size: 1rem;
 }
 
 .expandedOverlay {
@@ -72,7 +73,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8); /* Fondo semitransparente */
+  background-color: rgba(0, 0, 0, 0.8);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -85,55 +86,75 @@
   max-width: 1000px;
   height: 80%;
   border-radius: 15px;
-  overflow: hidden;
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: space-between;
-  padding: 20px;
 }
 
-.expandedImageContainer, .expandedVideoContainer {
+.expandedImageContainer {
   width: 100%;
-  height: 70%;
+  height: 50%; /* La mitad del modal */
   position: relative;
+}
+
+.expandedImageContainer img, .expandedImageContainer video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.expandedAudioPlayerWrapper {
+  width: 100%;
+  height: 50px; /* Mismo tamaño que la imagen */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.expandedDemoTitle {
+  text-align: center;
+  color: white;
+  margin-top: 20px; /* Espacio después del reproductor */
+  font-size: 1.5rem;
 }
 
 .closeButton {
   position: absolute;
   top: 15px;
   right: 15px;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(255, 255, 255, 0.3);
   color: white;
   border: none;
   width: 40px;
   height: 40px;
   border-radius: 50%;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .closeButton:hover {
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
-/* Media Queries para versiones responsivas */
+/* Media Queries */
 @media (max-width: 1200px) {
   .demoGrid {
-    grid-template-columns: repeat(3, 1fr); /* 3 columnas en pantallas medianas */
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media (max-width: 768px) {
   .demoGrid {
-    grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas pequeñas */
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 480px) {
   .demoGrid {
-    grid-template-columns: 1fr; /* 1 columna en móviles */
+    grid-template-columns: 1fr;
   }
 }
