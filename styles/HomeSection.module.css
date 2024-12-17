@@ -50,7 +50,7 @@
   flex: 1;
   opacity: 0;
   transition: opacity 1s ease-in-out 0.5s;
-  padding: 0 40px 80px; /* Ajusta posición por encima de los botones */
+  padding: 0 40px 80px;
 }
 
 .content.fadeIn {
@@ -70,10 +70,13 @@
 
 .description {
   margin: 0;
-  position: relative; /* Para ajustar la posición */
-  top: -3px; /* Elevar 3px */
-  text-align: left; /* Alinear a la izquierda */
-  margin-left: -20px; /* Mover más hacia la izquierda */
+  position: relative;
+  top: -3px;
+  text-align: left;
+  margin-left: -20px;
+  font-size: 3rem; /* Texto considerablemente más grande */
+  line-height: 1.2; /* Ajustar el espacio entre líneas */
+  font-weight: bold; /* Opcional para mayor impacto */
 }
 
 .expandableSections {
