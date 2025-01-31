@@ -21,7 +21,7 @@ const Footer = () => {
             <a href="mailto:paologrosso.composer@gmail.com" target="_blank" rel="noopener noreferrer">
               <FontAwesomeIcon icon={faEnvelope} className={styles.icon} />
             </a>
-            <a href='https://www.youtube.com/user/PaoloGrosso' target='_blank' rel='noopener noreferrer'>
+            <a href='https://www.youtube.com/@francopaologrosso' target='_blank' rel='noopener noreferrer'>
               <FontAwesomeIcon icon={faYoutube} className={styles.icon} />
             </a>
             <a href='https://www.linkedin.com/in/francopaologrosso/' target='_blank' rel='noopener noreferrer'>

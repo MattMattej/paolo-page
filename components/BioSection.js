@@ -13,7 +13,7 @@ const BioSection = () => {
         <h2 className={styles.title}>
           <span>{t('About Paolo')}</span>
           <div className={styles.socialIcons}>
-            <a href="https://www.youtube.com/user/PaoloGrosso" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.youtube.com/@francopaologrosso" target="_blank" rel="noopener noreferrer">
               <FontAwesomeIcon icon={faYoutube} className={styles.icon} />
             </a>
             <a href="https://www.linkedin.com/in/francopaologrosso/" target="_blank" rel="noopener noreferrer">

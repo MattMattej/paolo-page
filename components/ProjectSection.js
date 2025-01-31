@@ -69,7 +69,7 @@ const ProjectsSection = () => {
          { "url": "https://www.youtube.com/playlist?list=PLf9WXCV40h_Xm4Zs2KyKtajY4RuKXOBoP", "text": t('Listen on YouTube') },
         { "url": "https://music.apple.com/hn/album/una-luz-afuera-original-motion-picture-soundtrack/1769240618", "text": t('Listen on Apple Music') },
        { "url": "https://www.imdb.com/title/tt27212583/", "text": t('See on IMDb') }
-      ]*/
+      ] */
     },
     {
       "id": 5,
